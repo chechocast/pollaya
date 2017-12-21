@@ -1,15 +1,16 @@
 ﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <title>Huellitas</title>
+    <title>Pollaya</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <link href="https://fonts.googleapis.com/css?family=Oswald:300,400,500,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,600,700,800" rel="stylesheet">
     <link rel="stylesheet" href="../content/css/bootstrap-theme.min.css" />
     <link rel="stylesheet" href="../content/css/bootstrap.min.css" />
     <link rel="stylesheet" href="../content/css/styles.css" />
+    <link rel="stylesheet" type="text/css" href="../content/css/jquery.fullPage.css" />
 
     <!--[if IE]>
 		<script type="text/javascript">
@@ -18,26 +19,35 @@
 	<![endif]-->
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="../content/js/bootstrap.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-animate.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
+
+    <script type="text/javascript" src="../content/js/scrolloverflow.min.js"></script>
+
+	<script type="text/javascript" src="../content/js/jquery.fullPage.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('#fullpage').fullpage({
+				sectionsColor: ['#FFF', '#FF1D45', '#F3F5FA', '#FFF', '#FF1D45' ],
+				autoScrolling: false,
+				fitToSection: false
+			});
+		});
+	</script>
 </head>
 <body ng-app="ngAnimate">
 	<header>
 		<div class="content-all">
 			<h1 class="logo">
 			<a href="/">
-				<img src="../content/images/logo.svg">
+				<img src="../content/images/logo.png">
 				<span>Huellitas sin hogar - Ayuda a adoptar mascotas</span>
 			</a>
 			</h1>
 			<nav class="menu">
 				<h2><a class="active" href="index.html">Inicio</a></h2>
-				<h2><a href="huellitas.html">En adopción</a></h2>
-				<h2><a href="perdidos.html">Perdidos</a></h2>
-				<h2><a href="fundaciones.html">Fundaciones</a></h2>
-				<h2><a href="porque.html">¿Por qué adoptar?</a></h2>
-				<br/>
+				<h2><a href="">Mis Pollas</a></h2>
+				<h2><a href="">Crear polla</a></h2>
+				<h2><a href="">Cerrar sesión</a></h2>
 			</nav>
 			<div class="user-wraper">
 				<!--<a class="login" href="">Iniciar sesión</a>-->
@@ -54,60 +64,79 @@
 			<br/>
 		</div>
 	</header>
-	<div class="pg-body">
-		<section>
+	<section id="fullpage">
+		<div class="section active sec-1">
 			<article class="content-all">
+				<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
 
+				</div>
+				<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+					<h1>ARMA TU POLLA Y ENTRENA PARA GANARLE A TUS AMIGOS.</h1>
+					<a href="" class="btn btn-lg">Juega aquí</a>
+					<div class="wrap-down">
+						<i class="icon-down animated slideInDown infinite"></i>
+						<span>Scroll</span>
+					</div>
+				</div>
 			</article>
-		</section>
-		<footer>
-			<div class="redes">
-				<a href=""><span class="icon-face"></span></a>
-				<a href=""><span class="icon-insta"></span></a>
-			</div>
-			<p>© 2018 Pollaya. All rights reserved.</p>
-		</footer>
-	</div>
+		</div>
+		<div class="section sec-2">
+			<article class="content-all">
+				<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+					<h3>1. ELIGE UNA MODO</h3>
+					<p>Es hora de escoger la manera en la que competirán para llenarte de alegría y ganarle a tus amigos.</p>
+					<a href="" class="btn btn-lg">Juega aquí</a>
+				</div>
+				<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
 
-	<!-- Modal login -->
-	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-	  <div class="modal-dialog login" role="document">
-	    <div class="modal-content">
-	    	<div class="modal-header">
-	    		<h4 class="tit-modal">INICIA SESIÓN</h4>
-	    		<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-		        	<span class="icon-close" aria-hidden="true"></span>
-		        </button>
-	    	</div>
-	    	<form>
-		    	<div class="login_redes">
-		    		<button>
-		    			<span class="icon-face"></span>
-		    		</button>
-		    		<button>
-		    			<span class="icon-google-plus"></span>
-		    		</button>
-		    		<button>
-		    			<span class="icon-twt"></span>
-		    		</button>
-		    		<p>o con</p>
-		    	</div>
-		    	<div>
-		    		<input type="text" placeholder="email:">
-					<span class="error"></span>
-		    	</div>
-		    	<div>
-		    		<input type="password" placeholder="Contraseña:">
-					<span class="error"></span>
-		    	</div>
-		    	<div class="box-log">
-                    ¿Eres nuevo? <a href="">Regístrate</a><br>
-                    <a href="">Recuperar contraseña</a>
-                </div>
-                <input type="submit" value="Entrar" class="btn btn-lg btn-save">
-		    </form>
-	    </div>
-	  </div>
-	</div>
+				</div>
+			</article>
+		</div>
+		<div class="section sec-3">
+			<article class="content-all">
+				<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+
+				</div>
+				<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+					<h3>2. ARMA <br/>TU POLLA</h3>
+					<p>Haz tus predicciones y consigue la gloria.</p>
+				</div>
+			</article>
+		</div>
+		<div class="section sec-4">
+			<article class="content-all">
+				<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+					<h3>3. GANA PUNTOS DURANTE LOS PARTIDOS</h3>
+					<p>Suma puntos con los resultados, goles y puntuaciones de los partidos.</p>
+				</div>
+				<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+
+				</div>
+			</article>
+		</div>
+		<div class="section sec-2">
+			<article class="content-all">
+				<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+					<h3>4. ENFRÉNTATE A MÁS PARTICIPANTES</h3>
+					<p>¿Perteneces a una empresa y quieres jugar una polla con tus compañeros de trabajo?</p>
+				</div>
+				<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+
+				</div>
+			</article>
+		</div>
+		<div class="foot-home">
+			<article class="content-all">
+				<h3>JUEGA GRATIS APRENDE Y DIVIERTETÉ</h3>
+				<p>Si tienes dudas sobre como crear pollas del mundial escribenos a nuestra página de <a href="">Facebook</a></p>
+			</article>
+		</div>
+	</section>
+	<footer>
+		<div class="redes">
+			<a href=""><span class="icon-face"></span></a>
+			<a href=""><span class="icon-insta"></span></a>
+		</div>
+		<p>© 2018 Pollaya. All rights reserved.</p>
+	</footer>
 </body>
-</html>

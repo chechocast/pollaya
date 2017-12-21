@@ -4,24 +4,21 @@
 
 /*COLORS*/
 $black: #000;
-$blue: #304A6F;
-$blue2: #3C75C2;
-$blue3: #7CD2E1;
-$gray: #676767;
-$gray2: #D2D2D2;
-$gray3: #BABABA;
-$gray4: #F6F6F7;
-$gray5: #919191;
-$red: #FC9282;
-$green: #B8EA81;
+$dark: #2A292E;
+$gray: #F3F5FA;
+$gray2: #E2E4E7;
+$gray3: #656968;
+$red: #FF1D45;
+$red2: #B70F28;
 $bor-gray: 1px solid #D2D2D2;
 $white: #FFF;
 $text-color: #676767;
 
 
 body{
-    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    font-family: 'Montserrat', sans-serif;
     color: $text-color;
+    font-weight: 300;
 }
 h1, h2, h3, h4, h5, h6 {
     font-weight: normal;
@@ -31,7 +28,7 @@ a {
     cursor: pointer;
     text-decoration: none !important;
     word-break: break-all;
-    color: $blue2;
+    color: $red;
 }
 br{
     clear: both;
@@ -167,7 +164,6 @@ header{
         position: fixed;
         top: 70px;
         left: 0;
-        background: $gray4;
         width: 100%;
 
         br{
@@ -176,7 +172,6 @@ header{
     }
 
     h2{
-        font-family: 'Oswald', sans-serif;
         font-size: 16px;
         text-transform: uppercase;
         font-weight: 500;
@@ -191,13 +186,12 @@ header{
         }
 
         a{
-            color: $blue;
             display: block;
             padding: 14px 5px;
             @include transition(0.3s);
 
             &:hover, &.active{
-                color: $blue2;
+                color: $red;
             }
         }
     }
@@ -209,7 +203,6 @@ header{
     .btn-noti{
         float: left;
         font-size: 25px;
-        color: $blue;
         display: block;
         position: relative;
         margin: 8px 20px 7px 0;
@@ -256,7 +249,7 @@ header{
         padding: 7px 0;
         text-align: center;
         box-sizing: border-box;
-        background: $blue3;
+        background: $red;
         color: $white;
     }
 }
@@ -265,17 +258,8 @@ header{
 .pg-body{
     padding: 70px 0 0;
 }
-section{
-    padding: 40px 0;
-}
-.card{
-    background: $gray4;
-    @include border-radius(6px);
-}
 .tit-section{
     font-size: 30px;
-    font-family: 'Oswald', sans-serif;
-    color: $blue;
     font-weight: 700;
 
     @include xxxs{
@@ -291,8 +275,62 @@ section{
 }
 
 /*HOME*/
+.section{
+    color: $dark;
 
+    h3{
+        font-size: 60px;
+        font-weight: 800;
+        line-height: 1;
+    }
+    p{
+        font-size: 20px;
+    }
+}
+.sec-1{
 
+    h1{
+        font-size: 37px;
+        font-weight: 800;
+        margin: 0 0 20px;
+        line-height: 1;
+    }
+    .btn{
+        background: $red;
+        color: $white;
+        font-size: 25px;
+    }
+}
+.sec-2{
+    color: $white;
+
+    .btn{
+        background: $white;
+        color: $red;
+        font-size: 25px;
+    }
+}
+.sec-4{
+    color: $red;
+}
+.foot-home{
+    padding: 50px 0;
+    background: $dark;
+    color: $white;
+    text-align: center;
+
+    h3{
+        font-size: 40px;
+        font-weight: 700;
+        max-width: 490px;
+        margin: 0 auto;
+    }
+    p{
+        margin: 30px 0 0;
+        padding: 10px 0 0;
+        border-top: 1px solid $white;
+    }
+}
 /*FIN HOME*/
 
 /*FORMULARIOS*/
@@ -300,32 +338,6 @@ section{
     max-width: 830px;
     margin: 0 auto;
 
-    .btn-content{
-        text-align: center;
-        margin: 20px 0 0;
-
-        .btn{
-            min-width: 170px;
-            margin: 0 5px;
-
-            @include i6{
-                min-width: auto;
-                width: calc(50% - 20px);
-            }
-        }
-    }
-}
-.tit-form {
-    font-size: 25px;
-    text-align: center;
-    font-family: 'Oswald', sans-serif;
-    font-weight: 500;
-    color: $blue;
-    margin: 0 0 20px;
-
-    @include i5{
-        font-size: 20px;
-    }
 }
 .bad{
     input[type="text"], [type="password"], [type="number"], [type="email"], select, textarea{
@@ -339,59 +351,19 @@ section{
     display: block;
 }
 .legal{
-    color: $blue;
     font-size: 12px;
     display: block;
     margin: 10px 0 0;
 }
-.type-pet{
-    float: left;
-    margin: 0 0 10px;
-
-    &:first-child{
-        margin: 0 18px 0 0;
-        
-        @include lg{
-            margin: 0 7px 0 0;
-        }
-        @include md{
-            margin: 0 30px 0 0;
-        }
-    }
-
-    input[type="radio"]{
-        width: 16px;
-        height: 16px;
-        display: block;
-        float: left;
-        margin: 13px 5px 13px 0;
-    }
-
-    [class^="icon-"]{
-        font-size: 40px;
-        color: $blue;
-    }
-}
-.central-pet{
-    text-align: center;
-    margin: 20px 0 10px;
-
-    .type-pet{
-        float: none;
-        display: inline-block;
-    }
-}
 
 form{
     input[type="text"], [type="password"], [type="number"], [type="email"], select{
-        background: $gray4;
         width: 100%;
         font-size: 16px;
         padding: 10px;
         @include border-radius(6px);
     }
     textarea{
-        background: $gray4;
         width: 100%;
         font-size: 16px;
         padding: 10px;
@@ -401,7 +373,6 @@ form{
     label{
         font-size: 16px;
         font-weight: bold;
-        color: $blue;
         display: block;
     }
     fieldset{
@@ -420,299 +391,6 @@ form{
             color: $text-color;
         }
     }
-}
-.btn-save{
-    background: $blue3;
-    color: $white;
-    @include transition(0.3s);
-
-    &:hover{
-        background: $blue2;
-        color: $white;
-    }
-}
-.btn-cancel{
-    background: $gray2;
-    color: $white;
-    @include transition(0.3s);
-
-    &:hover{
-        background: $gray5;
-        color: $white;
-    }
-}
-ul.wizard_steps {
-    display: table;
-    list-style: none;
-    position: relative;
-    width: 400px;
-    margin: 30px auto;
-    padding: 0;
-
-    @include xxs{
-        width: 100%;
-    }
-
-    li{
-        display: table-cell;
-        text-align: center;
-
-        &:hover{
-            display: block;
-            position: relative;
-            filter: alpha(opacity=100);
-            opacity: 1;
-            color: $gray;
-        }
-
-        &:first-child{
-
-            a:before{
-                left: 50%;
-            }
-        }
-
-        a{
-            display: block;
-            position: relative;
-            filter: alpha(opacity=100);
-            opacity: 1;
-            color: $gray;
-
-            .step_no{
-                background: $white;
-                color: $green;
-                border: 3px solid $green;
-                font-family: 'Oswald', sans-serif;
-                line-height: 55px;
-                display: block;
-                margin: 0 auto 5px;
-                font-size: 30px;
-                text-align: center;
-                position: relative;
-                z-index: 1;
-                font-weight: 500;
-                @include circle(60px);
-
-                @include xxs{
-                    @include circle(45px);
-                    font-size: 20px;
-                    line-height: 40px;
-                }
-            }
-            &:before {
-                content: "";
-                position: absolute;
-                height: 4px;
-                background: $gray2;
-                top: 30px;
-                width: 100%;
-                z-index: 0;
-                left: 0;
-
-                @include xxs{
-                    top: 20px;
-                }
-            }
-
-            &.selected{
-                
-                .step_no{
-                    background: $green;
-                    color: $white;
-                }
-                &:before {
-                    background: $green;
-                }
-            }
-            &.done{
-
-                .step_no {
-                    background: $white;
-                    color: $green;
-                }
-                &:before {
-                    background: $green;
-                }
-            }
-            &.disabled{
-
-                .step_no {
-                    background: $white;
-                    border: 3px solid $gray2;
-                    color: $gray2;
-                }
-            }
-        }
-
-        &:last-child{
-
-            a:before{
-                right: 50%;
-                width: 50%;
-                left: auto;
-            }
-        }
-    }
-}
-.f-n-family{
-    width: 400px;
-    margin: 0 auto;
-
-    @include xxs{
-        width: 100%;
-    }
-
-    p{
-        padding: 0;
-        font-size: 16px;
-        text-align: center;
-
-        @include xxs{
-            font-size: 14px;
-        }
-    }
-}
-.ask-f{
-    border-bottom: $bor-gray;
-    padding: 10px 0;
-
-    &:last-child{
-        margin: 0 0 30px;
-    }
-    input[type="text"], textarea, select{
-        font-size: 14px;
-    }
-}
-.images-dropzone {
-    background: $gray4;
-    text-align: center;
-    padding: 40px 0 0;
-    margin: 0 0 30px;
-    @include border-radius(6px);
-
-    p {
-        margin: 0;
-        padding: 0;
-        font-size: 16px;
-        color: $gray5;
-
-        [class^="icon-"]{
-            font-size: 35px;
-        }
-    }
-    .file-upload-button {
-        position: relative;
-        overflow: hidden;
-        max-width: 60%;
-        margin: 10px auto 30px;
-    
-        button {
-            white-space: normal;
-            margin: 0;
-            font-size: 16px;
-            background: $blue3;
-            color: $white;
-        }
-        input[type="file"] {
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 100%;
-            height: 100%;
-            font-size: 500px;
-            opacity: 0;
-            cursor: pointer;
-            display: block;
-        }
-    }
-}
-.all-preview{
-    margin: 0;
-    padding: 0;
-    list-style: none;
-
-    @include xxs{
-        padding: 0 10px;
-    }
-
-    li{
-        width: 20%;
-        padding: 0 15px;
-        box-sizing: border-box;
-        float: left;
-
-        @include s{
-            width: 25%;
-        }
-        @include xxs{
-            width: 33.3%;
-            padding: 0 5px;
-        }
-
-        .preview-img{
-            position: relative;
-            overflow: hidden;
-            margin: 0 0 20px;
-
-            img{
-                display: block;
-                width: 100%;
-            }
-
-            .delete-img{
-                cursor: pointer;
-                background: $blue3;
-                color: $white;
-                position: absolute;
-                top: 5px;
-                right: 5px;
-                line-height: 1;
-                padding: 3px;
-                border-radius: 2px;
-                z-index: 1;
-            }
-            .principal{
-                position: absolute;
-                bottom: 0;
-                width: 100%;
-                color: $white;
-                background: $blue;
-                text-align: center;
-
-                @include xxs{
-                    font-size: 10px;
-                }
-            }
-        }
-    }
-}
-.redes-inp{
-
-    input[type="text"]{
-        width: calc(100% - 50px);
-        float: left;
-        margin: 0 0 0 6px;
-    }
-    [class^="icon-"]{
-        font-size: 25px;
-        text-align: center;
-        line-height: 44px;
-        color: $white;
-        background: $blue3;
-        @include circle(44px);
-        display: block;
-        float: left;
-    }
-}
-.aprova{
-    background: $green;
-}
-.adopt{
-    background: $blue2;
-}
-.reject{
-    background: $red;
 }
 /*FIN FORMULARIOS*/
 
@@ -736,258 +414,23 @@ footer{
 
         a{
             display: inline-block;
-            @include circle(60px);
-            background: $gray5;
+            background: $red;
+            @include circle(40px);
             color: $white;
-            font-size: 35px;
+            font-size: 20px;
             margin: 0 10px;
-            padding: 8px 0;
+            padding: 7px 0;
             box-sizing: border-box;
             @include transition(0.3s);
 
-            &:hover{
-                background: $blue2;
-            }
         }
     }
 }
 /*FIN FOOTER*/
 
-/*ADMIN*/
-.res-pet{
-    @include border-radius(6px);
-    background: $gray4;
-
-    @include xxs{
-        margin: 0 15px;
-    }
-
-    img{
-        width: 225px;
-        float: left;
-
-        @include xxs{
-            display: none;
-        }
-    }
-    .txt-pet{
-        width: calc(100% - 225px);
-        box-sizing: border-box;
-        padding: 20px;
-        float: left;
-
-        @include xxs{
-            width: 100%;
-        }
-
-        h3{
-            font-size: 20px;
-            color: $blue;
-            font-weight: 700;
-            font-family: 'Oswald', sans-serif;
-        }
-        div{
-            float: left;
-            width: 50%;
-
-            @include s{
-                width: 100%;
-                float: none;
-            }
-        }
-        span{
-            display: block;
-        }
-    }
-}
-.ft-mpet{
-    margin: 0 0 20px;
-
-    @include iplus{
-        br{
-            display: none;
-        }
-    }
-
-    .search-box{
-        margin: 10px 0 10px;
-    }
-    .btn-more{
-        float: left;
-
-        @include iplus{
-            float: none;
-            margin: 0 15px;
-        }
-    }
-    .stage-box{
-        float: right;
-        margin: 15px 0;
-
-        @include iplus{
-            float: none;
-            margin: 10px 15px 0;
-        }
-
-        span{
-            float: left;
-        }
-
-        .st-off{
-            @include circle(20px);
-            display: inline-block;
-            background: $gray2;
-            margin: 0 5px 0 10px;
-        }
-        .st-on{
-            @include circle(20px);
-            display: inline-block;
-            background: $green;
-            margin: 0 5px 0 10px;
-        }
-    }
-}
-.table{
-    font-size: 16px;
-
-    @include sm{
-        width: 700px;
-    }
-    @include s{
-        font-size: 14px;
-    }
-
-    th{
-        font-size: 18px;
-        font-weight: bold;
-        color: $blue;
-
-        @include s{
-            font-size: 16px;
-        }
-    }
-    &>tbody>tr>td{
-        padding: 20px 8px;
-        vertical-align: middle;
-
-        @include s{
-            padding: 8px;
-        }
-    }
-    .img-table{
-        width: 120px;
-        padding: 0;
-
-        img{
-            width: 100%;
-            display: block;
-        }
-    }
-    .btn{
-        background: $blue3;
-        color: $white;
-        @include transition(0.3s);
-
-        &:hover{
-            background: $blue2;
-        }
-    }
-}
-.mask-table{
-    width: 100%;
-    overflow-x: auto;
-}
-.tit-sct{
-    font-size: 20px;
-    color: $blue;
-    font-weight: bold;
-    margin: 30px 0 0;
-
-    @include xxs{
-        font-size: 16px;
-    }
-}
-.answer-list{
-    list-style: none;
-    margin: 0;
-    padding: 0;
-
-    li{
-        font-size: 16px;
-        color: $black;
-        padding: 10px 0;
-
-        @include xxs{
-            font-size: 14px;
-        }
-
-        b{
-            font-size: 14px;
-            display: block;
-            color: $gray;
-        }
-    }
-}
-
-.profile-avatar-wrap{
-    margin: 80px 0;
-    text-align: center;
-    float: right;
-
-    @include sm{
-        margin: 0 0 20px;
-    }
-
-    .user-img{
-        margin: 0 auto 10px;
-        @include circle(100px);
-        cursor: default;
-
-        .no-img{
-            font-size: 40px;
-            padding: 20px 0;
-        }
-    }
-}
-
-.onoffswitch {
-    position: relative; width: 60px;
-    -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
-}
-.onoffswitch-checkbox {
-    display: none;
-}
-.onoffswitch-label {
-    display: block; overflow: hidden; cursor: pointer;
-    height: 36px; padding: 0; line-height: 36px;
-    border: 2px solid $gray2; border-radius: 36px;
-    background-color: $gray2;
-    transition: background-color 0.3s ease-in;
-}
-.onoffswitch-label:before {
-    content: "";
-    display: block; width: 36px; margin: 0px;
-    background: $white;
-    position: absolute; top: 0; bottom: 0;
-    right: 22px;
-    border: 2px solid $gray2; border-radius: 36px;
-    transition: all 0.3s ease-in 0s; 
-}
-.onoffswitch-checkbox:checked + .onoffswitch-label {
-    background-color: $green;
-}
-.onoffswitch-checkbox:checked + .onoffswitch-label, .onoffswitch-checkbox:checked + .onoffswitch-label:before {
-   border-color: $green;
-}
-.onoffswitch-checkbox:checked + .onoffswitch-label:before {
-    right: 0px; 
-}
-
-/*FIN ADMIN*/
-
 /*MODALES*/
 .modal-backdrop {
-    background: $green;
+    background: $red;
 }
 .modal-backdrop.in{
     opacity: .8;
@@ -1002,12 +445,7 @@ footer{
     .close{
         display: block;
         font-size: 25px;
-        color: $blue;
         opacity: 1;
-
-        &:hover{
-            color: $blue2;
-        }
     }
     .btn{
         width: 170px; 
@@ -1022,8 +460,6 @@ footer{
 }
 .tit-modal{
     font-size: 25px;
-    color: $blue;
-    font-family: 'Oswald', sans-serif;
     text-align: center;
     padding: 0 0 0 25px;
     float: left;
@@ -1039,7 +475,7 @@ footer{
     position: relative;
 
     button {
-        background: $blue3;
+        background: $red;
         color: #FFF;
         font-size: 35px;
         @include circle(60px);
@@ -1051,10 +487,6 @@ footer{
         @include i6{
             @include circle(50px);
             font-size: 30px;
-        }
-
-        &:hover{
-            background: $blue2;
         }
     }
     p {
@@ -1074,7 +506,6 @@ footer{
     max-width: 360px;
 }
 .msj-end{
-    color: $blue;
     font-size: 16px;
     text-align: center;
 
@@ -1084,7 +515,7 @@ footer{
 
     [class^="icon-"]{
         font-size: 80px;
-        color: $blue3;
+        color: $red;
     }
 }
 /*FIN MODALES*/
@@ -1101,9 +532,6 @@ footer{
         cursor: pointer;
         @include transition(0.3s);
 
-        &:hover{
-            background: $gray4;
-        }
 
         p{
             padding: 0;
@@ -1131,17 +559,6 @@ footer{
 
 .col-md-12{
     float: none;
-
-    .data-list{
-        padding: 0;
-    }
-}
-.btn-lg, .btn-group-lg>.btn{
-
-    @include xxxs{
-        font-size: 16px;
-        padding: 8px 16px;
-    }
 }
 
 @import 'animate';
