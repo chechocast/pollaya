@@ -8,6 +8,7 @@ $dark: #2A292E;
 $gray: #F3F5FA;
 $gray2: #E2E4E7;
 $gray3: #656968;
+$gray4: #9B9B9B;
 $red: #FF1D45;
 $red2: #B70F28;
 $bor-gray: 1px solid #D2D2D2;
@@ -149,53 +150,6 @@ header{
         right: 0;
     }
 }
-
-.menu{
-    float: left;
-    margin: 0 0 0 60px;
-
-    @include md{
-        margin: 0 0 0 20px;
-    }
-    @include sm{
-        display: none;
-        float: none;
-        margin: 0;
-        position: fixed;
-        top: 70px;
-        left: 0;
-        width: 100%;
-
-        br{
-            display: none;
-        }
-    }
-
-    h2{
-        font-size: 16px;
-        text-transform: uppercase;
-        font-weight: 500;
-        float: left;
-        margin: 0 10px;
-
-        @include sm{
-            float: none;
-            margin: 0;
-            text-align: center;
-            border-top: $bor-gray;
-        }
-
-        a{
-            display: block;
-            padding: 14px 5px;
-            @include transition(0.3s);
-
-            &:hover, &.active{
-                color: $red;
-            }
-        }
-    }
-}
 .user-wraper{
     float: right;
     position: relative;
@@ -254,6 +208,209 @@ header{
     }
 }
 /*FIN HEADER*/
+
+/*HOME*/
+.menu-big {
+    padding: 0;
+    color: $black;
+    position: relative;
+    text-align: center;
+    display: flex;
+    -webkit-justify-content: center;
+    align-content: stretch;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+
+    @include i6{
+        padding: 60px 0;
+        display: block;
+    }
+
+    .menu-nav{
+        text-align: center;
+        list-style: none;
+
+        h2{
+            margin: 8px 0;
+            font-size: 30px;
+
+            @include s{
+                font-size: 25px;
+                margin: 0;
+            }
+                
+            @include xxxs{
+                font-size: 20px;
+            }
+
+            &.active{
+                text-decoration: underline;
+            }
+
+            a{
+                display: block;
+                padding: 10px 0;
+                color: $dark;
+
+                &:hover{
+                    color: $red;
+                }
+
+                &.log-out{
+                    color: $gray4;
+                }
+            }
+        }
+    }
+}
+.content-menu {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    z-index: 2;
+    background-color: $white;
+    -webkit-overflow-scrolling: touch;
+
+    @include s{
+        right: 0;
+        width: 100%;
+    }
+
+    &.ng-enter, &.ng-leave {
+        transition: left 300ms ease-in-out;
+
+        @include s{
+            transition: right 300ms ease-in-out;
+        }
+    }
+
+    &.ng-enter {
+        left: -100%;
+
+        @include s{
+            left: auto;
+            right: -100%;
+        }
+    }
+
+    &.ng-leave.ng-leave-active {
+        left: -100%;
+
+         @include s{
+            left: auto;
+            right: -100%;
+        }
+    }
+
+    &.ng-leave {
+        left: 0;
+
+         @include s{
+            left: auto;
+            right: 0;
+        }
+    }
+
+    &.ng-enter.ng-enter-active {
+        left: 0;
+
+         @include s{
+            left: auto;
+            right: 0;
+        }
+    }
+}
+.menu-icon {
+    position: relative;
+
+    label {
+        width: 30px;
+        height: 30px;
+        display: inline-block;
+        position: relative;
+        cursor: pointer;
+
+        &:after{
+            content: "Menú";
+            position: absolute;
+            left: 35px;
+            top: 2px; 
+            font-size: 18px;
+
+            @include s{
+                left: -55px;
+            }
+        }
+
+        i{
+            position: absolute;
+            top: 7px;
+            left: 3px;
+            width: 23px;
+            height: 4px;
+            display: block;
+            font-style: normal;
+            background: $black;
+            @include border-radius(4px);
+            @include transition(0.25s);
+        
+            &:last-child{
+                bottom: 7px;
+                top: auto;
+            }
+        }
+    }
+    &.menu-closed{
+
+        label i {
+            @include rotate(45deg);
+            top: 13px;
+
+            &:last-child{
+                @include rotate(-45deg);
+                bottom: 13px;
+            }
+        }
+    }
+}
+.btn-menu {
+    position: absolute;
+    top: 0;
+    left: 20px;
+    color: $black;
+    font-size: 23px;
+    padding: 0;
+    margin: 11px 0;
+    z-index: 3;
+    @include transition(0.5s);
+
+    [class^="icon-"] {
+        font-size: 23px;
+    }
+
+    @include s{
+        right: 20px;
+        left: auto;
+    }
+    @include xxxs {
+        right: 5%;
+        font-size: 16px;
+    }
+
+    &.leftmenu{
+        left: 20px;
+        transition-delay: 0.3s;
+        color: $black;
+
+        @include s{
+            left: auto;
+            right: 30px;
+        }
+    }
+}
+/*FIN HOME*/
 
 .pg-body{
     padding: 70px 0 0;
@@ -329,6 +486,20 @@ header{
         margin: 30px 0 0;
         padding: 10px 0 0;
         border-top: 1px solid $white;
+    }
+}
+.wrap-down {
+    width: 100%;
+    cursor: pointer;
+    position: absolute;
+    left: 0;
+    bottom: 2%;
+    text-align: center;
+    color: $gray3;
+
+    .icon-down{
+        display: block;
+        font-size: 30px;
     }
 }
 /*FIN HOME*/
