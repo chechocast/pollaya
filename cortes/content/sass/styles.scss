@@ -125,9 +125,10 @@ header{
     top: 0;
     left: 0;
     width: 100%;
-    height: 70px;
-    padding: 10px 0;
+    height: 60px;
+    padding: 10px 20px;
     z-index: 2;
+    box-sizing: border-box;
     background: $white;
 
     @include s{
@@ -135,12 +136,32 @@ header{
     }
 }
 .logo{
-    position: relative;
-    float: left;
-    height: 50px;
+    height: 40px;
+    position: absolute;
+    top: 10px;
+    width: 200px;
+    left: calc(50% - 100px);
+    padding: 0;
+    align-items: center;
+    text-align: center;
+    box-sizing: border-box;
+    z-index: 0;
+
+    @include i5{
+        position: relative;
+        top: auto;
+        width: auto;
+        left: auto;
+        float: left;
+        margin: 0 0 0 40px;
+    }
+    @include xxxs{
+        height: 35px;
+        margin: 2px 0 2px 40px;
+    }
 
     img{
-        height: 50px;
+        height: 100%;
         width: auto;
     }
 
@@ -159,7 +180,7 @@ header{
         font-size: 25px;
         display: block;
         position: relative;
-        margin: 8px 20px 7px 0;
+        margin: 2px 20px 2px 0;
 
         span{
             background: $red;
@@ -177,7 +198,7 @@ header{
     }
     .user-img{
         float: left;
-        margin: 7px 0 8px;
+        margin: 2px 0;
     }
     .login{
         padding: 15px 0;
@@ -278,55 +299,6 @@ header{
     &.show-menu{
         left: 0;
     }
-
-    @include s{
-        right: 0;
-        width: 100%;
-    }
-
-    &.ng-enter, &.ng-leave {
-        transition: left 300ms ease-in-out;
-
-        @include s{
-            transition: right 300ms ease-in-out;
-        }
-    }
-
-    &.ng-enter {
-        left: -100%;
-
-        @include s{
-            left: auto;
-            right: -100%;
-        }
-    }
-
-    &.ng-leave.ng-leave-active {
-        left: -100%;
-
-         @include s{
-            left: auto;
-            right: -100%;
-        }
-    }
-
-    &.ng-leave {
-        left: 0;
-
-         @include s{
-            left: auto;
-            right: 0;
-        }
-    }
-
-    &.ng-enter.ng-enter-active {
-        left: 0;
-
-         @include s{
-            left: auto;
-            right: 0;
-        }
-    }
 }
 .menu-icon {
     position: relative;
@@ -342,11 +314,11 @@ header{
             content: "Menú";
             position: absolute;
             left: 35px;
-            top: 2px; 
+            top: 3px; 
             font-size: 18px;
 
-            @include s{
-                left: -55px;
+            @include iplus{
+                display: none;
             }
         }
 
@@ -383,12 +355,10 @@ header{
 }
 .btn-menu {
     position: absolute;
-    top: 0;
+    top: 12px;
     left: 20px;
     color: $black;
     font-size: 23px;
-    padding: 0;
-    margin: 11px 0;
     z-index: 3;
     @include transition(0.5s);
 
@@ -396,12 +366,7 @@ header{
         font-size: 23px;
     }
 
-    @include s{
-        right: 20px;
-        left: auto;
-    }
     @include xxxs {
-        right: 5%;
         font-size: 16px;
     }
 
@@ -587,7 +552,7 @@ footer{
         font-size: 12px;
     }
     .redes{
-        margin: 0 0 20px;
+        margin: 10px 0 20px;
 
         a{
             display: inline-block;
