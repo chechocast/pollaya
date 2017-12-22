@@ -32,11 +32,27 @@
 				fitToSection: false
 			});
 		});
+		function mshow(){
+			if($('#menu').hasClass('show-menu')){
+				$('#menu').removeClass('show-menu');
+			}
+			else{
+				$('#menu').addClass('show-menu');	
+			}
+		}
+		function mclose(){
+			if($('.menu-icon').hasClass('menu-closed')){
+				$('.menu-icon').removeClass('menu-closed');
+			}
+			else{
+				$('.menu-icon').addClass('menu-closed');	
+			}
+		}
 	</script>
 </head>
 <body ng-app="ngAnimate">
 	<header>
-		<button class="btn-menu">
+		<button class="btn-menu" type="button" onclick="mshow(); mclose()">
             <span class="menu-icon">
                 <label>
                     <i></i>
@@ -44,7 +60,7 @@
                 </label>
             </span>
         </button>
-        <div class="content-menu">
+        <div class="content-menu" id="menu">
 			<div class="menu-big">
 				<nav class="menu-nav">
 					<h2 class="active"><a href="index.html">Inicio</a></h2>
