@@ -22,16 +22,7 @@
     <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
 
     <script type="text/javascript" src="../content/js/scrolloverflow.min.js"></script>
-
-	<script type="text/javascript" src="../content/js/jquery.fullPage.min.js"></script>
 	<script type="text/javascript">
-		$(document).ready(function() {
-			$('#fullpage').fullpage({
-				sectionsColor: ['#FFF', '#FF1D45', '#F3F5FA', '#FFF', '#FF1D45' ],
-				autoScrolling: false,
-				fitToSection: false
-			});
-		});
 		function mshow(){
 			if($('#menu').hasClass('show-menu')){
 				$('#menu').removeClass('show-menu');
@@ -90,75 +81,35 @@
 		</div>
 		<br/>
 	</header>
-	<section id="fullpage">
-		<div class="section active sec-1">
+	<div class="pg-body">
+		<section>
 			<article class="content-all">
-				<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-
-				</div>
-				<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-					<h1>ARMA TU POLLA Y ENTRENA PARA GANARLE A TUS AMIGOS.</h1>
-					<a href="" class="btn btn-lg">Juega aquí</a>
-				</div>
+				<h1 class="tit-section">Crear polla</h1>
+				<ul class="wizard_steps">
+					<li>
+						<a href="#step-1" class="selected" isdone="1" rel="1">
+							<span class="step_no">1</span>
+						</a>
+					</li>
+					<li>
+						<a href="#step-2" class="disabled" isdone="0" rel="2">
+							<span class="step_no">2</span>
+						</a>
+					</li>
+					<li>
+						<a href="#step-3" class="disabled" isdone="0" rel="3">
+							<span class="step_no">3</span>
+						</a>
+					</li>
+					<li>
+						<a href="#step-4" class="disabled" isdone="0" rel="4">
+							<span class="step_no">4</span>
+						</a>
+					</li>
+				</ul>
 			</article>
-			<div class="wrap-down">
-				<i class="icon-down animated slideInDown infinite"></i>
-				<span>Scroll</span>
-			</div>
-		</div>
-		<div class="section sec-2">
-			<article class="content-all">
-				<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-					<h3>1. ELIGE UNA MODO</h3>
-					<p>Es hora de escoger la manera en la que competirán para llenarte de alegría y ganarle a tus amigos.</p>
-					<a href="" class="btn btn-lg">Juega aquí</a>
-				</div>
-				<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-
-				</div>
-			</article>
-		</div>
-		<div class="section sec-3">
-			<article class="content-all">
-				<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-
-				</div>
-				<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-					<h3>2. ARMA <br/>TU POLLA</h3>
-					<p>Haz tus predicciones y consigue la gloria.</p>
-				</div>
-			</article>
-		</div>
-		<div class="section sec-4">
-			<article class="content-all">
-				<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-					<h3>3. GANA PUNTOS DURANTE LOS PARTIDOS</h3>
-					<p>Suma puntos con los resultados, goles y puntuaciones de los partidos.</p>
-				</div>
-				<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-
-				</div>
-			</article>
-		</div>
-		<div class="section sec-2">
-			<article class="content-all">
-				<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-
-				</div>
-				<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-					<h3>4. ENFRÉNTATE A MÁS PARTICIPANTES</h3>
-					<p>¿Perteneces a una empresa y quieres jugar una polla con tus compañeros de trabajo?</p>
-					<a href="" class="btn btn-lg">Juega aquí</a>
-				</div>
-			</article>
-		</div>
-		<div class="foot-home">
-			<article class="content-all">
-				<h3>JUEGA GRATIS APRENDE Y DIVIERTETÉ</h3>
-				<p>Si tienes dudas sobre como crear pollas del mundial escribenos a nuestra página de <a href="">Facebook</a></p>
-			</article>
-		</div>
-	</section>
+		</section>
+	</div>
 	<footer>
 		Compartir en
 		<div class="redes">
