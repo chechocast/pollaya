@@ -45,7 +45,7 @@ input, select, textarea {
 }
 input[type="text"], [type="password"], [type="number"], [type="email"], [type="date"], [type="search"], [type="tel"], [type="url"], [type="week"], [type="time"], select{
     -webkit-appearance: none;
-    background: none;
+    background: $white;
     border: none;
     box-sizing: border-box;
     border: $bor-gray;
@@ -628,6 +628,26 @@ header{
     margin: 0 auto;
     padding: 30px 0;
 
+    @include xs {
+        width: 480px;
+    }
+
+    @include xxs {
+        width: 375px;
+    }
+
+    @include i6 {
+        width: 360px;
+    }
+
+    @include i5 {
+        width: 320px;
+    }
+
+    @include xxxs {
+        width: 90%;
+    }
+
     .tit-time{
         color: $gray3;
         text-align: center;
@@ -690,7 +710,7 @@ header{
     .list-score{
         font-size: 18px;
         color: $dark;
-        margin: 40px 0 20px;
+        margin: 0 0 20px;
         padding: 0;
         list-style: none;
 
@@ -703,11 +723,25 @@ header{
         }
 
         h3{
-            margin: 0 0 30px;
+            margin: 40px 0 30px;
         }
 
         li{
             padding: 5px 0;
+
+            &.rank{
+
+                .name{
+                    width: calc(100% - 108px);
+                }
+                .score-points{
+                    width: 55px;
+
+                    b{
+                        width: 100%;
+                    }
+                }
+            }
 
             &.mine{
 
@@ -726,6 +760,13 @@ header{
                 width: 40px;
                 font-weight: 400;
                 margin: 0 3px 0 0;
+
+                @include iplus{
+                    width: 35px;
+                }
+                @include i5{
+                    width: 30px;
+                }
             }
 
             .name{
@@ -769,7 +810,7 @@ header{
             }
         }
         .btn{
-            margin: 15px auto;
+            margin: 0 auto 15px;
             font-size: 15px;
             display: block;
             border: 2px solid $gray4;
@@ -813,6 +854,132 @@ header{
     }
 }
 /*FIN INTERNA POLLA*/
+
+/*POLLAS COMPLETAS*/
+.group-forecast{
+    background: $gray;
+    padding: 20px 0 10px;
+
+    &:nth-child(2n){
+        background: $white;
+    }
+
+    h2{
+        color: $black;
+        font-size: 25px;
+        font-weight: 700;
+        margin: 0 0 15px;
+    }
+
+    ul{
+        margin: 0;
+        padding: 0;
+        list-style: none;
+
+        li{
+            width: 270px;
+            float: left;
+            margin: 0 107px 20px 0;
+
+            @include lg{
+                margin: 0 75px 20px 0;
+            }
+
+            @include md{
+                width: 242px;
+                margin: 0 20px 20px 0;
+            }
+            @include sm{
+                width: 270px;
+                margin: 0 60px 20px 0;
+
+                &:nth-child(2n){
+                    margin-right: 0;
+                }
+            }
+            @include s{
+                width: 240px;
+                margin: 0 60px 20px 0;
+            }
+            @include xs{
+                width: 270px;
+                margin: 0 auto 20px !important;
+                float: none;
+            }
+
+            &:nth-child(3n){
+                margin-right: 0;
+
+                @include sm{
+                    margin-right: 60px;
+                }
+            }
+            &:nth-child(6n){
+                @include sm{
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+    .box-match{
+        font-weight: 400;
+
+        .tit-time{
+            margin: 0 0 5px;
+        }
+
+        .img-flag{
+            width: 60px;
+            float: left;
+
+            &:last-child{
+                float: right;
+            }
+
+            img{
+                display: block;
+                width: 100%;
+            }
+
+            h4{
+                font-weight: 600;
+                text-align: center;
+                color: $dark;
+                margin: 5px 0 0;
+                font-size: 14px;
+                text-transform: uppercase;
+            }
+        }
+        .score-box{
+            float: left;
+            width: calc(100% - 140px);
+            text-align: center;
+            margin: 0 10px;
+
+            input{
+                text-align: center;
+                width: calc(50% - 11px);
+                display: inline-block;
+                font-size: 20px;
+                padding: 6px 0;
+            }
+            label{
+                font-weight: 400;
+            }
+            a{
+                padding: 2px 0;
+                display: block;
+            }
+        }
+    }
+}
+.content-forecast{
+    
+    .btn-more{
+        margin: 20px auto 0;
+    }
+}
+/*FIN POLLAS COMPLETAS*/
 
 /*CREAR*/
 .filtre{
