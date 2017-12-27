@@ -855,6 +855,12 @@ header{
 }
 /*FIN INTERNA POLLA*/
 
+.clearxs{
+    @include xs{
+        display: none;
+    }
+}
+
 /*POLLAS COMPLETAS*/
 .group-forecast{
     background: $gray;
