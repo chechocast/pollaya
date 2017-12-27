@@ -870,6 +870,9 @@ header{
         font-weight: 700;
         margin: 0 0 15px;
     }
+    .legal{
+        margin: 0;
+    }
 
     ul{
         margin: 0;
@@ -956,12 +959,19 @@ header{
             text-align: center;
             margin: 0 10px;
 
-            input{
+            input, div{
                 text-align: center;
                 width: calc(50% - 11px);
                 display: inline-block;
                 font-size: 20px;
                 padding: 6px 0;
+                color: $dark;
+
+                i{
+                    font-size: 14px;
+                    color: $gray4;
+                    font-style: normal;
+                }
             }
             label{
                 font-weight: 400;
