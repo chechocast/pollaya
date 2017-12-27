@@ -654,48 +654,6 @@ header{
         font-size: 16px;
         margin: 0 0 10px;
     }
-    .box-match{
-        margin: 0 0 30px;
-
-        .img-flag{
-            width: 150px;
-            float: left;
-
-            &:last-child{
-                float: right;
-            }
-
-            img{
-                display: block;
-                width: 100%;
-            }
-
-            h2{
-                font-size: 16px;
-                font-weight: 600;
-                text-align: center;
-                color: $dark;
-                margin: 10px 0 0;
-            }
-        }
-        .score-box{
-            float: left;
-            width: calc(100% - 300px);
-            text-align: center;
-
-            div{
-                width: calc(50% - 18px);
-                display: inline-block;
-                color: $red;
-                font-size: 50px;
-                margin: 14px 0;
-            }
-            label{
-                font-size: 20px;
-                font-weight: 600;
-            }
-        }
-    }
     h3{
         text-align: center;
         color: $red;
@@ -825,6 +783,48 @@ header{
         }
     }
 }
+.box-match{
+    margin: 0 0 30px;
+
+    .img-flag{
+        width: 150px;
+        float: left;
+
+        &:last-child{
+            float: right;
+        }
+
+        img{
+            display: block;
+            width: 100%;
+        }
+
+        h2{
+            font-size: 16px;
+            font-weight: 600;
+            text-align: center;
+            color: $dark;
+            margin: 10px 0 0;
+        }
+    }
+    .score-box{
+        float: left;
+        width: calc(100% - 300px);
+        text-align: center;
+
+        div{
+            width: calc(50% - 18px);
+            display: inline-block;
+            color: $red;
+            font-size: 50px;
+            margin: 14px 0;
+        }
+        label{
+            font-size: 20px;
+            font-weight: 600;
+        }
+    }
+}
 .btn-content {
     text-align: center;
     margin: 20px 0 0;
@@ -939,16 +939,6 @@ header{
 
         .img-flag{
             width: 60px;
-            float: left;
-
-            &:last-child{
-                float: right;
-            }
-
-            img{
-                display: block;
-                width: 100%;
-            }
 
             h4{
                 font-weight: 600;
@@ -960,15 +950,12 @@ header{
             }
         }
         .score-box{
-            float: left;
             width: calc(100% - 140px);
-            text-align: center;
             margin: 0 10px;
 
             input, div{
                 text-align: center;
                 width: calc(50% - 11px);
-                display: inline-block;
                 font-size: 20px;
                 padding: 6px 0;
                 color: $dark;
@@ -981,6 +968,7 @@ header{
             }
             label{
                 font-weight: 400;
+                font-size: 14px;
             }
             a{
                 padding: 2px 0;
@@ -1034,7 +1022,7 @@ ul.wizard_steps {
     list-style: none;
     position: relative;
     width: 400px;
-    margin: 30px auto;
+    margin: 10px auto;
     padding: 0;
 
     @include xxs{
@@ -1079,7 +1067,7 @@ ul.wizard_steps {
                 text-align: center;
                 position: relative;
                 z-index: 1;
-                font-weight: 500;
+                font-weight: 600;
                 @include circle(60px);
 
                 @include xxs{
@@ -1140,6 +1128,130 @@ ul.wizard_steps {
                 width: 50%;
                 left: auto;
             }
+        }
+    }
+}
+
+.tit-crea{
+    font-size: 20px;
+    color: $dark;
+    font-weight: 700;
+    text-align: center;
+}
+.crea-polla{
+    margin: 30px auto 0;
+    padding: 0;
+    list-style: none;
+    max-width: 860px;
+
+    li{
+        width: calc(33.3% - 40px);
+        float: left;
+        box-sizing: border-box;
+
+        @include sm{
+            width: calc(33.3% - 20px);
+        }
+
+        @include xxs{
+            width: 100%;
+            margin: 0 0 20px;           
+        }
+
+        &:nth-child(2n){
+            margin: 0 60px;
+
+            @include sm{
+                margin: 0 30px;
+            }
+
+            @include xxs{
+                margin: 0 0 20px;
+            }
+        }
+
+        a{
+            color: $gray4;
+            word-break: break-word;
+            font-weight: 700;
+            text-align: center;
+            display: block;
+            font-size: 30px;
+            border: 3px solid $gray4;
+            padding: 80px 20px;
+            line-height: 1;
+            @include border-radius(8px);
+            @include transition(0.3s);
+
+            @include sm{
+                padding: 60px 15px;
+                font-size: 25px;
+            }
+
+            @include s{
+                padding: 50px 15px;
+                font-size: 20px;
+            }
+
+            @include xxs{
+                padding: 20px;
+            }
+
+            &:hover{
+                border-color: $red;
+                color: $red;
+            }
+            &.active{
+                background: $red;
+                color: $white;
+                border-color: $red;
+            }
+        }
+    }
+}
+.list-match{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li{
+        width: calc(33.3% - 27px);
+        box-sizing: border-box;
+        padding: 20px;
+        float: left;
+        margin: 0 40px 30px 0;
+        border: 3px solid $white;
+        @include border-radius(8px);
+        @include transition(0.3s);
+        cursor: pointer;
+
+        &:nth-child(3n){
+            margin-right: 0;
+        }
+
+        &:hover{
+            border-color: $red;   
+        }
+
+        &.active{
+            background: $red;
+            border-color: $red;
+            color: $white;
+
+            h2{
+                color: $white;
+            }
+        }
+    }
+    .img-flag{
+        width: 100px;
+    }
+    .score-box {
+        width: calc(100% - 200px);
+        
+        label{
+            font-size: 16px;
+            margin: 22px 0;
         }
     }
 }
