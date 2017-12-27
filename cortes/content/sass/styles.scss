@@ -1060,7 +1060,6 @@ ul.wizard_steps {
                 background: $white;
                 color: $red;
                 border: 3px solid $red;
-                font-family: 'Oswald', sans-serif;
                 line-height: 55px;
                 display: block;
                 margin: 0 auto 5px;
@@ -1138,6 +1137,7 @@ ul.wizard_steps {
     color: $dark;
     font-weight: 700;
     text-align: center;
+    margin: 0 0 20px;
 }
 .crea-polla{
     margin: 30px auto 0;
@@ -1226,8 +1226,47 @@ ul.wizard_steps {
         @include transition(0.3s);
         cursor: pointer;
 
+        @include md{
+            padding: 10px;
+        }
+
+        @include sm{
+            width: calc(50% - 20px);
+            padding: 20px;
+
+            &:nth-child(2n){
+                margin-right: 0;
+            }
+        }
+
+        @include s{
+            margin: 0 30px 30px 0;
+            width: calc(50% - 15px);
+            padding: 15px;
+        }
+        @include xxs{
+            padding: 10px;
+        }
+
+        @include i5{
+            width: 100%;
+            margin: 0 0 30px;
+        }
+
         &:nth-child(3n){
             margin-right: 0;
+
+            @include sm{
+                margin-right: 40px;
+            }
+            @include s{
+                margin-right: 30px;
+            }
+        }
+        &:nth-child(6n){
+            @include sm{
+                margin-right: 0;
+            }
         }
 
         &:hover{
@@ -1246,13 +1285,103 @@ ul.wizard_steps {
     }
     .img-flag{
         width: 100px;
+
+        @include md{
+            width: 85px;
+        }
+        @include sm{
+            width: 100px;
+        }
+        @include s{
+            width: 85px;
+        }
+        @include xs{
+            width: 70px;
+        }
+        @include xxs{
+            width: 50px;
+        }
+        @include i5{
+            width: 70px;
+        }
+
+        h2{
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+
+            @include md{
+                font-size: 14px;
+                margin: 5px 0 0;
+            }
+        }
     }
     .score-box {
         width: calc(100% - 200px);
+
+        @include md{
+            width: calc(100% - 170px);
+        }
+        @include sm{
+            width: calc(100% - 200px);
+        }
+        @include s{
+            width: calc(100% - 170px);
+        }
+        @include xs{
+            width: calc(100% - 140px);
+        }
+        @include xxs{
+            width: calc(100% - 100px);
+        }
+        @include i5{
+            width: calc(100% - 140px);
+        }
         
         label{
             font-size: 16px;
             margin: 22px 0;
+
+            @include xxs{
+                font-size: 14px;
+                margin: 7px 0;
+            }
+            @include i5{
+                margin: 14px 0;
+            }
+        }
+    }
+}
+.crear-cks{
+    font-size: 20px;
+    margin: 40px auto;
+    padding: 0;
+    list-style: none;
+    max-width: 320px;
+
+    @include i5{
+        font-size: 18px;
+    }
+
+    li{
+        padding: 8px 0;
+    }
+
+    .checkbox{
+        float: left;
+
+        label{
+            font-weight: 300;
+        }
+    }
+    .ipt-pts{
+        float: right;
+
+        input[type="number"]{
+            width: 80px;
+            text-align: center;
+            padding: 7px 0;
+            @include border-radius(3px);
         }
     }
 }
@@ -1260,7 +1389,7 @@ ul.wizard_steps {
 
 /*FORMULARIOS*/
 .content-form{
-    max-width: 830px;
+    max-width: 500px;
     margin: 0 auto;
 
 }
