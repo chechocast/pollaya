@@ -202,10 +202,11 @@ header{
         margin: 2px 0;
     }
     .login{
-        padding: 15px 0;
-        font-weight: 500;
+        padding: 10px 0;
+        font-weight: 400;
         display: block;
         float: right;
+        color: $gray4;
     }
 }
 .user-img {
@@ -385,7 +386,7 @@ header{
 /*FIN HOME*/
 
 .pg-body{
-    padding: 60px 0 0;
+    padding: 70px 0 0;
 }
 .tit-section{
     font-size: 30px;
@@ -790,6 +791,14 @@ header{
         width: 150px;
         float: left;
 
+        @include xxs{
+            width: 100px;
+        }
+
+        @include i6{
+            width: 70px;
+        }
+
         &:last-child{
             float: right;
         }
@@ -812,16 +821,35 @@ header{
         width: calc(100% - 300px);
         text-align: center;
 
+        @include xxs{
+            width: calc(100% - 200px);
+        }
+        @include i6{
+            width: calc(100% - 140px);
+        }
+
         div{
             width: calc(50% - 18px);
             display: inline-block;
             color: $red;
             font-size: 50px;
             margin: 14px 0;
+
+            @include xxs{
+                margin: 0;
+                font-size: 45px;
+            }
+            @include i6{
+                font-size: 30px;
+            }
         }
         label{
             font-size: 20px;
             font-weight: 600;
+
+            @include i6{
+                font-size: 14px;
+            }
         }
     }
 }
@@ -835,22 +863,39 @@ header{
         border: 3px solid $red;
         font-weight: 700;
         @include transition(0.3s);
+
+        @include xxxs{
+            min-width: 120px;
+            margin: 0;
+        }
     }
-    .btn-save{
+}
+.btn-save{
+    background: $red;
+    color: $white;
+
+    &:hover{
+        background: $red2;
+        border-color: $red2;
+    }
+}
+.btn-cancel{
+
+    &:hover{
         background: $red;
         color: $white;
-
-        &:hover{
-            background: $red2;
-            border-color: $red2;
-        }
     }
-    .btn-cancel{
+}
+.btn-default{
+    border-color: $red;
+    @include transition(0.3s);
+    color: $red;
+    text-shadow: none;
 
-        &:hover{
-            background: $red;
-            color: $white;
-        }
+    &:hover{
+        background: $red;
+        color: $white;
+        border-color: $red;
     }
 }
 /*FIN INTERNA POLLA*/
@@ -955,7 +1000,7 @@ header{
 
             input, div{
                 text-align: center;
-                width: calc(50% - 11px);
+                width: calc(50% - 12px);
                 font-size: 20px;
                 padding: 6px 0;
                 color: $dark;
@@ -997,6 +1042,18 @@ header{
         font-size: 16px;
         font-weight: 600;
         margin: 0 50px 0 0;
+
+        @include xxs{
+            margin: 0 30px 0 0;
+        }
+
+        @include i6{
+            margin: 0 25px 0 0;
+        }
+
+        @include i5{
+            font-size: 14px;
+        }
 
         &.active{
 
@@ -1385,6 +1442,36 @@ ul.wizard_steps {
         }
     }
 }
+.add-user{
+    position: relative;
+
+    a{
+        position: absolute;
+        font-size: 20px;
+        top: 0;
+        right: 0;
+        display: block;
+        padding: 8px 10px;
+        color: $gray2;
+        @include transition(0.3s);
+
+        &:hover{
+            color: $red;
+        }
+    }
+}
+.add-friends{
+    margin: 20px auto 50px !important;
+
+    .btn-mas{
+        @include circle(50px);
+        background: $red;
+        color: $white;
+        font-size: 20px;
+        display: block;
+        margin: 0 auto;
+    }
+}
 /*FIN CREAR*/
 
 /*FORMULARIOS*/
@@ -1427,8 +1514,8 @@ form{
         border: $bor-gray;
     }
     label{
-        font-size: 16px;
-        font-weight: bold;
+        font-size: 15px;
+        font-weight: 300;
         display: block;
     }
     fieldset{
@@ -1450,6 +1537,29 @@ form{
 }
 /*FIN FORMULARIOS*/
 
+/*PERFIL*/
+.my-account{
+    margin: 20px 0;
+
+    .user-img {
+        margin: 0 auto 10px;
+        @include circle(100px);
+        overflow: hidden;
+        cursor: default;
+
+        .no-img {
+            font-size: 40px;
+            padding: 20px 0;
+        }
+    }
+
+    .btn-sm{
+        display: block;
+        margin: 0 auto 30px;
+    }
+}
+/*FIN PERFIL*/
+
 /*FOOTER*/
 footer{
     background: $white;
@@ -1467,114 +1577,26 @@ footer{
     }
     .redes{
         margin: 10px 0 20px;
+    }
+}
+.redes{
+    margin: 10px 0;
+    text-align: center;
 
-        a{
-            display: inline-block;
-            background: $red;
-            @include circle(40px);
-            color: $white;
-            font-size: 20px;
-            margin: 0 10px;
-            padding: 7px 0;
-            box-sizing: border-box;
-            @include transition(0.3s);
+    a{
+        display: inline-block;
+        background: $red;
+        @include circle(40px);
+        color: $white;
+        font-size: 20px;
+        margin: 0 10px;
+        padding: 7px 0;
+        box-sizing: border-box;
+        @include transition(0.3s);
 
-        }
     }
 }
 /*FIN FOOTER*/
-
-/*MODALES*/
-.modal-backdrop {
-    background: $red;
-}
-.modal-backdrop.in{
-    opacity: .8;
-}
-.modal-content{
-    @include box-shadow(none);
-    @include border-radius(6px);
-    border: none;
-    padding: 30px;
-    box-sizing: border-box;
-
-    .close{
-        display: block;
-        font-size: 25px;
-        opacity: 1;
-    }
-    .btn{
-        width: 170px; 
-        margin: 30px auto 0;
-        display: block;
-    }
-}
-.modal-header{
-    padding: 0;
-    border-bottom: none;
-    margin: 0 0 20px;
-}
-.tit-modal{
-    font-size: 25px;
-    text-align: center;
-    padding: 0 0 0 25px;
-    float: left;
-    width: calc(100% - 25px);
-    box-sizing: border-box;
-}
-
-.login_redes {
-    margin: 0 0 20px;
-    justify-content: center;
-    display: flex;
-    padding: 0 0 30px;
-    position: relative;
-
-    button {
-        background: $red;
-        color: #FFF;
-        font-size: 35px;
-        @include circle(60px);
-        overflow: hidden;
-        margin: 0 15px;
-        line-height: 35px;
-        @include transition(0.3s);
-
-        @include i6{
-            @include circle(50px);
-            font-size: 30px;
-        }
-    }
-    p {
-        font-size: 16px;
-        text-align: center;
-        position: absolute;
-        bottom: 0;
-        padding: 0;
-    }
-}
-.box-log {
-    padding: 20px 0 0;
-    text-align: center;
-    font-size: 15px;
-}
-.login{
-    max-width: 360px;
-}
-.msj-end{
-    font-size: 16px;
-    text-align: center;
-
-    @include i5{
-        font-size: 14px;
-    }
-
-    [class^="icon-"]{
-        font-size: 80px;
-        color: $red;
-    }
-}
-/*FIN MODALES*/
 
 /*NOTIFICACIONES*/
 .notification{
@@ -1588,6 +1610,9 @@ footer{
         cursor: pointer;
         @include transition(0.3s);
 
+        &:hover{
+            background: $gray;
+        }
 
         p{
             padding: 0;

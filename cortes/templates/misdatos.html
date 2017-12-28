@@ -1,12 +1,12 @@
 ﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <title>Huellitas</title>
+    <title>Pollaya</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <link href="https://fonts.googleapis.com/css?family=Oswald:300,400,500,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,600,700,800" rel="stylesheet">
     <link rel="stylesheet" href="../content/css/bootstrap-theme.min.css" />
     <link rel="stylesheet" href="../content/css/bootstrap.min.css" />
     <link rel="stylesheet" href="../content/css/styles.css" />
@@ -18,89 +18,122 @@
 	<![endif]-->
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="../content/js/bootstrap.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-animate.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
+
+	<script type="text/javascript">
+		function mshow(){
+			if($('#menu').hasClass('show-menu')){
+				$('#menu').removeClass('show-menu');
+			}
+			else{
+				$('#menu').addClass('show-menu');	
+			}
+		}
+		function mclose(){
+			if($('.menu-icon').hasClass('menu-closed')){
+				$('.menu-icon').removeClass('menu-closed');
+			}
+			else{
+				$('.menu-icon').addClass('menu-closed');	
+			}
+		}
+	</script>
 </head>
 <body ng-app="ngAnimate">
-	<header class="inner-header">
-		<div class="content-all">
-			<div class="main-menu"><span class="icon-menu"></span></div>
-			<h1 class="logo">
-			<a href="/">
-				<img src="../content/images/logo.svg">
-				<span>Huellitas sin hogar - Ayuda a adoptar mascotas</span>
+	<header>
+		<button class="btn-menu" type="button" onclick="mshow(); mclose()">
+            <span class="menu-icon">
+                <label>
+                    <i></i>
+                    <i></i>
+                </label>
+            </span>
+        </button>
+        <div class="content-menu" id="menu">
+			<div class="menu-big">
+				<nav class="menu-nav">
+					<h2 class="active"><a href="index.html">Inicio</a></h2>
+					<h2><a href="mispollas.html">Mis Pollas</a></h2>
+					<h2><a href="crearpolla.html">Crear polla</a></h2>
+					<h2><a class="log-out" href="login.html">Cerrar sesión</a></h2>
+				</nav>
+			</div>
+		</div>
+		<h1 class="logo">
+		<a href="/">
+			<img src="../content/images/logo.png">
+			<span>Pollaya - Juega con todos tus amigos</span>
+		</a>
+		</h1>
+		<div class="user-wraper">
+			<!--<a class="login" href="">Iniciar sesión</a>-->
+			<a class="btn-noti" href="notificaciones.html">
+				<i class="icon-bell"></i>
+				<span>00</span>
 			</a>
-			</h1>
-			<nav class="menu">
-				<h2><a class="active" href="index.html">Inicio</a></h2>
-				<h2><a href="huellitas.html">En adopción</a></h2>
-				<h2><a href="perdidos.html">Perdidos</a></h2>
-				<h2><a href="fundaciones.html">Fundaciones</a></h2>
-				<h2><a href="porque.html">¿Por qué adoptar?</a></h2>
-				<br/>
-			</nav>
-			<div class="user-wraper">
-				<!--<a class="login" href="">Iniciar sesión</a>-->
-				<a class="btn-noti" href="notificaciones.html">
-					<i class="icon-noti"></i>
-					<span>00</span>
-				</a>
-				<div class="user-img">
+			<div class="user-img">
+				<a href="misdatos.html">
 					<div class="no-img">J</div>
 					<img src="https://scontent.fbog2-1.fna.fbcdn.net/v/t1.0-1/p56x56/14368897_1083015501806273_3197812012577248045_n.jpg?oh=e0ba28e2d93f5a799ac2d262b2ff862c&oe=5959FBE8">
-				</div>
-				<br/>
-				<div class="sub-wraper">
-					<h6>Julian Castillo</h6>
-					<p>chechocast@gmail.com</p>
-					<a href="mishuellitas.html">Mis huellitas</a>
-					<a href="misdatos.html">Mis datos</a>
-					<a href="">Cerrar sesión</a>
-				</div>
+				</a>
 			</div>
 			<br/>
 		</div>
+		<br/>
 	</header>
-	<div class="pg-body col-md-12">
+	<div class="pg-body">
 		<section>
 			<article class="content-all">
-				<h1 class="tit-section col-md-12">MIS DATOS</h1>
-				<br/>
-				<div class="profile-avatar-wrap col-sm-6 col-xs-12">
+				<a class="btn-back" ng-click="main.back()" href="">
+		            <span class="icon-prev"></span>
+		            Volver
+		        </a>
+		        <div class="miga">
+		            Estás en / <a href="/">Inicio</a> / <a href="mispollas.html">Mis pollas</a> / <span>los mundialistas</span>
+		        </div>
+		        <br/>
+				<h1 class="tit-section">Mis datos</h1>
+				<div class="my-account">
 					<div class="user-img">
 						<div class="no-img">J</div>
 						<img src="https://scontent.fbog2-1.fna.fbcdn.net/v/t1.0-1/p56x56/14368897_1083015501806273_3197812012577248045_n.jpg?oh=e0ba28e2d93f5a799ac2d262b2ff862c&amp;oe=5959FBE8">
 					</div>
 					<button type="button" class="btn btn-default btn-sm">Cambiar imagen</button>
-				</div>
-				<form class="col-sm-6 col-xs-12">
-					<label>Nombre</label>
-					<input type="text">
-					<label>Email</label>
-					<input type="email">
-					<button type="button" class="btn btn-save btn-lg">Guardar</button>
-					<fieldset disabled>
+					<form class="content-form">
+						<label>Nombre</label>
+						<input type="text" placeholder="">
+						<span class="error"></span>
+						<label>Email</label>
+						<input type="email" placeholder="">
+						<span class="error"></span>
+						<button type="button" class="btn btn-save btn-lg">Guardar</button>
+						<fieldset disabled>
+							<label for="disabledTextInput">Contraseña</label>
+							<input type="password" id="disabledTextInput" class="form-control" placeholder="">
+						</fieldset>
+						<a href="">¿Quieres cambiar la contraseña?</a>
 						<label for="disabledTextInput">Contraseña</label>
-						<input type="password" id="disabledTextInput" class="form-control">
-					</fieldset>
-					<button type="button" class="btn btn-cancel btn-lg">Cambiar contraseña</button>
-					<label for="disabledTextInput">Contraseña</label>
-					<input type="password"  placeholder="Contraseña antigua">
-					<input type="password"  placeholder="Nueva contraseña">
-					<button type="button" class="btn btn-cancel btn-lg">Cancelar</button>
-					<button type="button" class="btn btn-save btn-lg">Guardar</button>
-				</form>
+						<input type="password"  placeholder="Contraseña antigua">
+						<span class="error"></span>
+						<input type="password"  placeholder="Nueva contraseña">
+						<span class="error"></span>
+						<div class="btn-content">
+							<a href="crearpolla2.html" class="btn btn-cancel btn-lg">Cancelar</a>
+							<a href="crearpolla4.html" class="btn btn-save btn-lg">Guardar</a>
+						</div>
+					</form>
+				</div>
 				<br/>
 			</article>
 		</section>
-		<footer>
-			<div class="redes">
-				<a href=""><span class="icon-face"></span></a>
-				<a href=""><span class="icon-insta"></span></a>
-			</div>
-			<p>© 2017 Huellitas sin hogar. All rights reserved.</p>
-		</footer>
 	</div>
+	<footer>
+		Compartir en
+		<div class="redes">
+			<a href=""><span class="icon-facebook"></span></a>
+			<a href=""><span class="icon-google"></span></a>
+			<a href=""><span class="icon-twitter"></span></a>
+		</div>
+		<p>© 2018 Pollaya. All rights reserved.</p>
+	</footer>
 </body>
-</html>
