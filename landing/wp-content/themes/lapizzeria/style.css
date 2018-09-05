@@ -1,0 +1,135 @@
+/*
+Theme Name: La Pizzeria
+Theme URI:
+Author: Julian Castillo
+Author URI:
+Description: Theme para sitio web de restaurants o pizzas
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: restaurant, mobile first, responsive, pizza
+Text Domain: lapizzeria
+*/
+
+html{
+  box-sizing: border-box;
+}
+
+*, *::after, *::before{
+  box-sizing: inherit;
+}
+
+body{
+  font-family: 'Roboto', sans-serif;
+}
+
+br{
+  clear: both;
+}
+
+/*MENU*/
+.sr-text{
+  display: none;
+}
+
+.social ul li a::before{
+  font-family: 'icomoon' !important;
+  display: inline-block;
+  color: #000;
+  content: '\ea90';
+}
+
+.social li a[href*="facebook.com"]::before {
+  content: '\ea90';
+}
+.social li a[href*="twitter.com"]::before {
+  content: '\ea96';
+}
+.social li a[href*="youtube.com"]::before {
+  content: '\ea9d';
+}
+.social li a[href*="pinterest.com"]::before {
+  content: '\ead1';
+}
+.social li a[href*="instagram.com"]::before {
+  content: '\ea92';
+}
+
+.main-menu{
+  display: none;
+  color: red;
+}
+.black{
+  height: 300px;
+  width: 100%;
+  background: black;
+  text-align: center;
+  color: white;
+}
+
+.box-nostros{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.box-nostros .box{
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  color: white;
+}
+
+.box-nostros .box:nth-child(1){
+  background: red;
+}
+.box-nostros .box:nth-child(2){
+  background: green;
+}
+.box-nostros .box:nth-child(3){
+  background: blue;
+}
+.box-nostros .box:nth-child(2) img{
+  order: 2;
+}
+.box-nostros .box:nth-child(2) div{
+  order: 1;
+}
+
+.box-nostros .box img{
+  display: block;
+  width: 100%;
+}
+
+.blogs{
+  width: calc(100% - 420px);
+  margin: 0 20px 0 0;
+  float: left;
+}
+.col-r{
+  width: 400px;
+  float: right;
+}
+
+@media only screen and (max-width: 768px) {
+
+  .main-menu{
+    display: block;
+  }
+
+  .menu-header-container{
+    display: none;
+  }
+
+  .box-nostros{
+    grid-template-columns: 1fr;
+  }
+  .box-nostros .box{
+    grid-template-columns: 2fr 3fr;
+    grid-template-rows: unset;
+  }
+  .box-nostros .box:nth-child(2) img{
+    order: 1;
+  }
+  .box-nostros .box:nth-child(2) div{
+    order: 2;
+  }
+}
