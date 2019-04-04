@@ -1,0 +1,403 @@
+@import 'normalize';
+
+/*COLORS*/
+$black: #000;
+$dark: #2A292E;
+$gray: #F3F5FA;
+$gray2: #E2E4E7;
+$gray3: #656968;
+$gray4: #9B9B9B;
+$red: #FF1D45;
+$red2: #B70F28;
+$bor-gray: 1px solid #E2E4E7;
+$white: #FFF;
+$text-color: #676767;
+
+
+
+@mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    -ms-border-radius: $radius;
+    border-radius: $radius;
+}
+@mixin rotate($rotate){
+    -webkit-transform: rotate($rotate);
+    -moz-transform: rotate($rotate);
+    -ms-transform: rotate($rotate);
+    transform: rotate($rotate);     
+}
+@mixin transition($item){
+    -webkit-transition: ease all ($item);
+    -moz-transition: ease all ($item);
+    -ms-transition: ease all ($item);
+    transition: ease all ($item);       
+}
+@mixin circle($value){
+    border-radius: 50%;
+    width: $value;
+    height: $value;
+    overflow: hidden;
+}
+@mixin box-shadow($shadow){
+    -webkit-box-shadow: $shadow;
+    -moz-box-shadow: $shadow;
+    -ms-box-shadow: $shadow;
+    box-shadow: $shadow;
+}
+@mixin text-shadow($shadow){
+  -webkit-box-shadow: $shadow;
+  -moz-box-shadow: $shadow;
+  -ms-box-shadow: $shadow;
+  box-shadow: $shadow;
+}
+@mixin blur($item){
+  -webkit-filter: blur($item);
+  -moz-filter: blur($item);
+  -ms-filter: blur($item);
+  filter: blur($item);
+}
+
+
+// media queries mixins
+
+@mixin xl {
+  @media (max-width: 1200px) {
+    @content;
+  }
+}
+@mixin lg {
+  @media (max-width: 1024px) {
+    @content;
+  }
+}
+@mixin md {
+  @media (max-width: 960px) {
+    @content;
+  }
+}
+
+@mixin sm {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+@mixin s {
+  @media (max-width: 600px) {
+    @content;
+  }
+}
+
+@mixin xs {
+  @media (max-width: 544px) {
+    @content;
+  }
+}
+@mixin xxs {
+  @media (max-width: 480px) {
+    @content;
+  }
+}
+
+@mixin iplus {
+  @media (max-width: 414px) {
+    @content;
+  }
+}
+
+@mixin i6 {
+  @media (max-width: 375px) {
+    @content;
+  }
+}
+@mixin i5 {
+  @media (max-width: 360px) {
+    @content;
+  }
+}
+
+@mixin xxxs {
+  @media (max-width: 320px) {
+    @content;
+  }
+}
+
+@mixin media ($ancho) {
+  @media (max-width: $ancho) {
+    @content;
+  }
+}
+@mixin mediaAlto ($alto) {
+  @media (max-height: $alto) {
+    @content;
+  }
+}
+
+
+body{
+    font-family: 'Montserrat', sans-serif;
+    color: $text-color;
+    font-weight: 300;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+    margin: 0;
+}
+a {
+    cursor: pointer;
+    text-decoration: none !important;
+    word-break: break-all;
+    color: $red;
+}
+br{
+    clear: both;
+}
+p {
+    margin: 0;
+    padding: 8px 0;
+}
+input, select, textarea {
+    border: none;
+    outline: none;
+    color: $text-color;
+}
+
+input:focus, textarea:focus, select:focus {
+    outline: 0 none;
+}
+
+input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px white inset;
+    color: inherit;
+}
+
+button{
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    padding: 0;
+}
+
+
+/*PAGOS*/
+.content-pricing{
+    position: relative;
+
+    .bk-1{
+        width: 220px;
+        height: 230px;
+        position: absolute;
+        top: -12px;
+        right: -12px;
+        z-index: 0;
+
+        @include xs{
+            width: 115px;
+            height: 127px;
+        }
+        @include iplus{
+            display: none;
+        }
+    }
+    .bk-2{
+       width: 452px;
+       height: 629px;
+       position: absolute;
+       bottom: -100px;
+       left: -120px;
+       z-index: 0;
+
+       @include media (1300px){
+        z-index: 1;
+        width: 300px;
+        height: 417px;
+        bottom: -80px;
+        left: -100px;
+       }
+
+       @include sm{
+        z-index: 1;
+        width: 220px;
+        height: 306px;
+        bottom: -50px;
+        left: -90px;
+       }
+       @include iplus{
+        display: none;
+       }
+    }
+}
+.tit-planes{
+    color: $red;
+    font-weight: 800;
+    font-size: 45px;
+    text-transform: uppercase;
+
+    @include sm{
+        font-size: 35px;
+    }
+    @include xxs{
+        font-size: 28px;
+    }
+}
+.list-pricing{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    .pricing-box{
+        font-family: 'Montserrat', sans-serif;
+        text-align: center;
+        background: $gray;
+        width: calc(33.3% - 20px);
+        margin: 105px 30px 0 0;
+        padding: 20px 0;
+        float: left;
+        position: relative;
+        box-sizing: border-box;
+        @include border-radius(3px);
+
+        @include sm{
+            width: 70%;
+            margin: 30px auto 10px !important;
+            float: none;
+            position: relative;
+            z-index: 1;
+        }
+
+        @include xs{
+            width: 80%;
+        }
+        @include xxs{
+            width: 100%;
+        }
+        
+        &:nth-child(3n){
+            margin-right: 0;
+        }
+
+        .cup{
+            margin: -135px auto 10px;
+            display: block;
+            z-index: 1;
+            position: relative;
+
+            @include sm{
+                margin: 0 auto 10px;
+                height: 100px;
+            }
+            @include xxs{
+                height: 80px;
+            }
+        }
+
+        h3{
+            font-size: 30px;
+            font-weight: 900;
+            line-height: 1;
+            color: $red;
+        }
+        h4{
+            color: $dark;
+            font-size: 18px;
+            font-weight: 400;
+        }
+        p{
+            font-size: 14px;
+            color: $gray3;
+            margin: 0 20px;
+            padding: 20px 0;
+        }
+        .price{
+            color: $red;
+            margin: 0;
+            padding: 0;
+            height: auto;
+            line-height: 180%;
+            font-size: 50px;
+            font-weight: 300;
+        }
+        .btn-buy{
+            background: transparent;
+            font-weight: 700;
+            border: 3px solid $red;
+            color: $red;
+            font-size: 16px;
+            position: relative;
+            z-index: 2;
+            text-transform: inherit;
+            display: block !important;
+            width: 160px;
+            margin: 0 auto;
+            box-sizing: border-box;
+            padding: 10px;
+            text-align: center;
+
+            &:hover{
+                background: $red;
+                color: $white;
+            }
+        }
+        .no-ads{
+            background: #4CC508;
+            color: $white;
+            text-transform: uppercase;
+            padding: 5px 10px;
+            font-weight: 400;
+
+            img{
+                width: 30px;
+                display: inline-block;
+                margin:0 5px 0 0;
+            }
+        }
+
+        &.novato{
+
+            h3{
+                color: #B4BAC0;
+            }
+
+            .price{
+                font-size: 80px;
+                line-height: 160%;
+            }
+        }
+        &.experto{
+
+            h3{
+                color: #4CC508;
+            }
+        }
+        .list-beneficios{
+            background: #E4EAF1;
+            padding: 15px 20px !important;
+            list-style: none;
+            margin: 10px 0 0;
+            text-align: left;
+
+            li{
+                font-size: 12px;
+                color: $gray3;
+                padding: 5px 0;
+
+                i{
+                    font-size: 16px;
+                    display: inline-block;
+                    margin: 0 5px 0 0;
+                    color: #4CC508;
+                }
+            }
+        }
+        .btn-beneficios{
+            color: $dark;
+            text-transform: inherit;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            margin: 20px auto 0;
+            position: relative;
+            z-index: 2;
+        }
+    }
+}
+/*FIN PAGOS*/
