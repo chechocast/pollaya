@@ -18,9 +18,7 @@
 <body>
 	<section class="focus content-pricing">
 		<article class="container">
-			<div class="section-header">
-				<h1 class="tit-planes">PLANES</h1>
-			</div>
+			<h1 class="tit-planes">PLANES</h1>
 			<br>
 			<ul class="list-pricing">
 				<li class="pricing-box novato">
@@ -28,8 +26,16 @@
 					<h3>NOVATO</h3>
 					<h4>2 a 8 integrates</h4>
 					<div class="price">$0</div>
-					<a class="btn btn-primary custom-button btn-buy" href="">Juega aquí</a>
+					<a class="btn btn-primary custom-button btn-buy" href="https://game.pollaya.com">Juega aquí</a>
 					<button class="btn-beneficios">Ver beneficios <i class="fa fa-angle-down"></i></button>
+					<ul id="beneficios1" class="list-beneficios" style="display: none;">
+						<li><i class="fa fa-check"></i> Actualización en línea</li>
+						<li><i class="fa fa-check"></i> Torneo completo o por fases</li>
+						<li><i class="fa fa-check"></i> Notificaciones</li>
+						<li><i class="fa fa-check"></i> Personalización de puntos</li>
+						<li><i class="fa fa-check"></i> Goleador, mejor jugador, mejor arquero</li>
+						<li><i class="fa fa-check"></i> Hasta 10 usuarios gratis</li>
+					</ul>
 				</li>
 				<li class="pricing-box experto">
 					<img class="cup" src="../content/images/img-plata.png">
@@ -40,24 +46,24 @@
 						SIN PUBLICIDAD
 					</div>
 					<div class="price">$40.000</div>
-					<a class="btn btn-primary custom-button btn-buy" href="">Comprar ya</a>
+					<a class="btn btn-primary custom-button btn-buy" href="https://game.pollaya.com">Comprar ya</a>
 					<button class="btn-beneficios">Ver beneficios <i class="fa fa-angle-down"></i></button>
-					<ul class="list-beneficios">
-						<li><i class="fa fa-check"></i> Sin publicidad en la plataforma</li>
-						<li><i class="fa fa-check"></i> Sin publicidad en la plataforma</li>
-						<li><i class="fa fa-check"></i> Sin publicidad en la plataforma</li>
-						<li><i class="fa fa-check"></i> Sin publicidad en la plataforma</li>
-						<li><i class="fa fa-check"></i> Sin publicidad en la plataforma</li>
-						<li><i class="fa fa-check"></i> Sin publicidad en la plataforma</li>
-						<li><i class="fa fa-check"></i> Sin publicidad en la plataforma</li>
+					<ul id="beneficios2" class="list-beneficios" style="display: none;">
+						<li><i class="fa fa-check"></i> Actualización en línea</li>
+						<li><i class="fa fa-check"></i> Torneo completo o por fases</li>
+						<li><i class="fa fa-check"></i> Notificaciones</li>
+						<li><i class="fa fa-check"></i> Personalización de puntos</li>
+						<li><i class="fa fa-check"></i> Goleador, mejor jugador, mejor arquero</li>
+						<li><i class="fa fa-check"></i> Sin publicidad</li>
+						<li><i class="fa fa-check"></i> Puedes invitar hasta 100 usuarios</li>
 					</ul>
 				</li>
 				<li class="pricing-box">
 					<img class="cup" src="../content/images/img-oro.png">
 					<h3>PROFESIONAL</h3>
 					<h4>21 o más integrantes</h4>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi rhoncus purus ipsum, blandit commodo ligula placerat id.</p>
-					<a class="btn btn-primary custom-button btn-buy" href="">Más info</a>
+					<p class="text">Si tu empresa tiene más de 100 empleados o deseas algún tipo de personalización para tu negocio, puedes enviarnos un correo a <a href="mailto:info@pollaya.com">info@pollaya.com</a></p>
+					<a class="btn btn-primary custom-button btn-buy" href="mailto:info@pollaya.com">Más info</a>
 					<button class="btn-beneficios">Ver beneficios <i class="fa fa-angle-down"></i></button>
 				</li>
 				<br />
@@ -70,4 +76,11 @@
 			<img src="../content/images/img-r2.png">
 		</div>
 	</section>
+	<script>
+		function openStats(position)
+		{
+		  //jQuery(".list-beneficios").hide();
+		  jQuery("#beneficios"+position).show();
+		}		
+	</script>
 </body>
