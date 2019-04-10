@@ -452,6 +452,10 @@ br{
             @include sm{
                 height: 50px;
             }
+
+            @include xxs{
+                margin: o auto;
+            }
         }
     }
 
