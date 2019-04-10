@@ -133,6 +133,10 @@ $text-color: #676767;
   }
 }
 
+br{
+    clear: both;
+}
+
 
 /*PAGOS*/
 .content-pricing{
@@ -371,3 +375,103 @@ $text-color: #676767;
     }
 }
 /*FIN PAGOS*/
+.box-appstore{
+    font-family: 'Montserrat', sans-serif;
+    background: $red;
+    color: $white;
+    padding: 80px 0 0;
+
+    @include md{
+        padding: 40px 0 0;  
+    }
+    @include s{
+        padding: 40px 0;  
+    }
+    @include xxs{
+        padding: 30px 0 0;  
+    }
+
+    .img-app{
+        float: left;
+        max-width: 470px;
+        width: 40%;
+        position: relative;
+        overflow: hidden;
+        height: 570px;
+        margin: 0 30px 0 0;
+
+        @include xl{
+            height: 475px;
+        }
+
+        @include media(990px){
+            width: 270px;
+            height: 335px;
+        }
+
+        @include s{
+            width: 180px;
+            margin: 0 20px 0 0;
+            height: auto;
+        }
+        @include xxs{
+            float: none;
+            margin: 30px auto 0;
+            width: 260px;
+            height: 320px;
+        }
+
+        img{
+            position: relative;
+        }
+    }
+
+    .text-app{
+        width: calc(100% - 500px);
+        float: right;
+        padding: 150px 0 0;
+
+        @include media(990px){
+            width: calc(100% - 300px);
+            padding: 80px 0 0;
+        }
+        @include s{
+            width: calc(100% - 200px);
+            padding: 70px 0 0;
+        }
+
+        @include xxs{
+            width: 100%;
+            float: none;
+            padding: 0;
+            text-align: center;
+        }
+
+        img{
+
+            @include sm{
+                height: 50px;
+            }
+        }
+    }
+
+    h3{
+        font-weight: 900;
+        font-size: 60px;
+        line-height: 120%;
+        margin: 0 0 30px;
+
+        @include xl{
+            font-size: 40px;
+        }
+        @include media(990px){
+            font-size: 35px;
+        }
+        @include sm{
+            font-size: 30px;
+        }
+        @include xs{
+            font-size: 25px;
+        }
+    }
+}
