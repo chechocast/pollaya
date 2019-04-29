@@ -16,9 +16,9 @@ $text-color: #676767;
 
 
 body{
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Source Sans Pro', sans-serif;
     color: $text-color;
-    font-weight: 300;
+    font-weight: 400;
 }
 h1, h2, h3, h4, h5, h6 {
     font-weight: normal;
@@ -121,7 +121,7 @@ button{
 
 /*HEADER*/
 header{
-    height: 60px;
+    height: 100px;
     padding: 10px 20px;
     box-sizing: border-box;
     background: $white;
@@ -134,6 +134,7 @@ header{
     position: -webkit-sticky;
     position: sticky;
     top: 0;
+    z-index: 2;
 }
 .logo{
     height: 80px;
@@ -143,6 +144,7 @@ header{
     text-align: center;
     box-sizing: border-box;
     z-index: 0;
+    float: left;
 
     @include i5{
         position: relative;
@@ -168,9 +170,60 @@ header{
         right: 0;
     }
 }
+
+.content-menus{
+    float: right;
+}
+.hd-contact{
+    margin: 0 0 20px;
+
+    span{
+        font-family: 'Oswald', sans-serif;
+        font-size: 20px;
+        float: right;
+        display: block;
+        text-align: right;
+        letter-spacing: 3px;
+        font-weight: 300;
+    }
+
+    .redes{
+        margin: 0 0 0 20px;
+        float: right;
+
+        a{
+            width: 26px;
+            height: 26px;
+            font-size: 14px;
+            margin: 0 3px;
+
+            [class^="icon-"]{
+                line-height: 26px;
+            }
+        }
+    }   
+}
 /*FIN HEADER*/
 
 /*MENU*/
+.menu-header{
+    list-style: none;
+
+    li{
+        display: inline-block;
+        padding: 5px;
+        margin: 0 0 0 60px;
+
+        &.active{
+            font-weight: 900;
+            text-decoration: underline;
+        }
+
+        &:first-child{
+            margin: 0;
+        }
+    }
+}
 
 /*FIN MENU*/
 .tit-section{
@@ -195,7 +248,45 @@ header{
     background: $gray;
     height: 460px;
 }
+.title{
+    text-align: center;
+    font-weight: 900;
+    color: $gray;
+    font-size: 30px; 
+}
+
+.bt-itn{
+    text-align: center;
+    display: block;
+    font-size: 18px;
+    margin: 3px 0 0;
+}
 /*FIN HOME*/
+
+/*PROYECTOS*/
+.list-projects{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+
+    li{
+
+        &:first-child{
+            grid-column: 1 / 3;
+            grid-row: 1 / 3;
+        }
+        &:nth-child(odd){
+
+        }
+        img{
+            display: block;
+            width: 100%;
+        }
+    }
+}
 
 
 /*FORMULARIOS*/
@@ -271,9 +362,12 @@ footer{
         color: $white;
         font-size: 20px;
         margin: 0 10px;
-        padding: 7px 0;
         box-sizing: border-box;
         @include transition(0.3s);
+
+        [class^="icon-"]{
+            line-height: 40px;
+        }
 
     }
 }
