@@ -6,11 +6,13 @@
 $black: #000;
 $dark: #2A292E;
 $gray: #606060;
-$gray2: #D8D8D8;
+$gray2: #808080;
 $gray3: #A1A1A1;
+$gray4: #D8D8D8;
 $green: #2FC594;
 $green2: #187C5E;
 $bor-gray: 1px solid #E2E4E7;
+$bor-green: 1px solid #2DCB9A;
 $white: #FFF;
 $text-color: #676767;
 
@@ -19,6 +21,7 @@ body{
     font-family: 'Source Sans Pro', sans-serif;
     color: $text-color;
     font-weight: 400;
+    font-size: 14px;
 }
 h1, h2, h3, h4, h5, h6 {
     font-weight: normal;
@@ -36,6 +39,10 @@ br{
 p {
     margin: 0;
     padding: 8px 0;
+    font-weight: 300;
+}
+address{
+    font-style: inherit;
 }
 input, select, textarea {
     border: none;
@@ -183,7 +190,7 @@ header{
         float: right;
         display: block;
         text-align: right;
-        letter-spacing: 3px;
+        letter-spacing: 0.1875rem;
         font-weight: 300;
     }
 
@@ -213,6 +220,7 @@ header{
         display: inline-block;
         padding: 5px;
         margin: 0 0 0 60px;
+        font-size: 16px;
 
         &.active{
             font-weight: 900;
@@ -226,24 +234,11 @@ header{
 }
 
 /*FIN MENU*/
-.tit-section{
-    font-size: 30px;
-    font-weight: 700;
-    color: $black;
-
-    @include xxxs{
-        font-size: 25px;
-    }
-}
-.sub-title{
-    font-size: 16px;
-
-    @include xxxs{
-        font-size: 14px;
-    }
-}
 
 /*HOME*/
+.home-block{
+    padding: 40px 0;
+}
 .prueba-banner{
     background: $gray;
     height: 460px;
@@ -253,6 +248,7 @@ header{
     font-weight: 900;
     color: $gray;
     font-size: 30px; 
+    letter-spacing: 0.3125rem;
 }
 
 .bt-itn{
@@ -261,33 +257,434 @@ header{
     font-size: 18px;
     margin: 3px 0 0;
 }
+.client-feedbacks{
+    border-top: $bor-gray;
+    border-bottom: $bor-gray;
+    padding: 20px 0;
+
+    .client-img{
+        @include circle(110px);
+        float: left;
+        margin: 0 70px 0 30px;
+
+        img{
+            display: block;
+            width: 100%;
+        }
+    }
+
+    .feedback-box{
+        width: calc(100% - 270px);
+        float: left;
+
+        .message{
+            color: $gray2;
+            font-weight: 600;
+            font-style: italic;
+            letter-spacing: 0.01875rem;
+            margin: 0;
+            position: relative;
+
+            &:before, &:after{
+                content: "\e900";
+                font-family: 'icomoon' !important;
+                speak: none;
+                font-style: normal;
+                font-weight: normal;
+                font-variant: normal;
+                text-transform: none;
+                line-height: 1;
+                font-size: 40px;
+                position: absolute;
+                top: 0;
+            }
+            &:before{
+                content: "\e900";
+                left: -55px;
+            }
+            &:after{
+                content: "\e902";
+                right: -55px;
+            }
+        }
+        .client{
+            color: $green;
+            font-size: 21px;
+            line-height: 100%;
+            margin: 5px 0 0;
+
+            span{
+                display: block;
+            }
+
+            &-name{
+                font-weight: 600;
+
+                &:before{
+                    content: "- ";
+                }
+                &:after{
+                    content: " -";
+                }
+
+            }
+            &-company{
+                font-weight: 300;
+            }
+        }
+    }
+}
+.clients-carrusel{
+    display: grid;
+    grid-template-columns: repeat(6,1fr);
+    grid-gap: 30px;
+
+    .client-box{
+        
+        img{
+            width: 100%;
+            display: block;
+        }
+    }
+}
 /*FIN HOME*/
 
 /*PROYECTOS*/
 .list-projects{
     list-style: none;
-    margin: 0;
+    margin: 40px 0;
     padding: 0;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-gap: 20px;
+    grid-gap: 30px;
 
     li{
 
         &:first-child{
             grid-column: 1 / 3;
             grid-row: 1 / 3;
+
+            .text-project{
+                font-size: 28px;
+
+                .icon-plus{
+                    font-size: 45px;
+                }
+            }
         }
         &:nth-child(odd){
 
         }
+
+        a{
+            position: relative;
+            display: block;
+            overflow: hidden;
+
+            &:hover{
+
+                .text-project{
+                    @include transition(0.5s);
+                    opacity: 1;
+                }
+            }
+        }
+
+        .text-project{
+            background: rgba(0, 0, 0, 0.5);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            font-size: 16px;
+            color: $white;
+            opacity: 0;
+
+            h3{
+                bottom: 20px;
+                left: 20px;
+                position: absolute;
+                box-sizing: border-box;
+            }
+
+            .icon-plus{
+                right: 20px;
+                bottom: 30px;
+                position: absolute;
+                font-size: 25px;
+            }
+        }
+
         img{
             display: block;
             width: 100%;
         }
     }
 }
+/*FIN PROYECTOS*/
 
+/*INTERNA*/
+.inter-project{
+    padding: 40px 0;
+}
+.intet-text{
+    float: left;
+    width: 300px;
+    margin: 0 30px 0 0;
+
+    h1{
+        font-size: 23px;
+        text-align: left;
+        color: $green;
+        margin: 5px 0;
+        position: relative;
+
+        &:before{
+            content: "";
+            position: absolute;
+            top: 10px;
+            left: -15px;
+            border-top: 10px solid $green;
+            border-left: 10px solid transparent;
+            @include rotate(45deg);
+        }
+    }
+    label{
+        font-size: 18px;
+        font-weight: 300;
+        color: $green;
+    }
+    time{
+        font-size: 23px;
+        font-weight: 900;
+        color: $gray;
+        margin: 10px 0 0;
+        display: block;
+    }
+}
+.img-principal{
+    float: left;
+    margin: 0;
+    width: calc(100% - 330px);
+
+    img{
+        display: block;
+        width: 100%;
+    }
+
+}
+.gallery-project{
+    margin: 40px 0;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 30px;
+
+    .img-pjt{
+
+        img{
+            display: block;
+            width: 100%;
+        }
+    }
+}
+.btn-back{
+    display: block;
+    text-align: right;
+    font-size: 18px;
+
+}
+/*FIN INTERNA*/
+
+/*NOSOTROS*/
+.content-us{
+    margin: 40px auto;
+    display: block;
+
+    .title{
+        color: $green;
+    }
+
+}
+.middle-col{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-gap: 0 40px;
+
+    &.c-us{
+        justify-content: center;
+        align-items: center;
+    }
+}
+.img-us{
+    background: $gray4;
+
+    .mask{
+        width: 100%;
+        display: block;
+    }
+}
+.mark-us{
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center;
+    color: $white;
+    margin: 60px 0;
+    padding: 20px 60px;
+    background: rgba(44,197,149,1);
+    background: -moz-linear-gradient(left, rgba(44,197,149,1) 0%, rgba(43,126,135,1) 100%);
+    background: -webkit-gradient(left top, right top, color-stop(0%, rgba(44,197,149,1)), color-stop(100%, rgba(43,126,135,1)));
+    background: -webkit-linear-gradient(left, rgba(44,197,149,1) 0%, rgba(43,126,135,1) 100%);
+    background: -o-linear-gradient(left, rgba(44,197,149,1) 0%, rgba(43,126,135,1) 100%);
+    background: -ms-linear-gradient(left, rgba(44,197,149,1) 0%, rgba(43,126,135,1) 100%);
+    background: linear-gradient(to right, rgba(44,197,149,1) 0%, rgba(43,126,135,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2cc595', endColorstr='#2b7e87', GradientType=1 );
+
+}
+.txt-us{
+
+    &:nth-child(odd){
+        padding: 0 0 0 calc(100% - 500px);
+    }
+
+    &.cinta-h{
+        background: url(../images/img-cinta.svg) no-repeat right bottom;
+        background-size: 70% auto;
+    }
+
+    .title{
+        text-align: left;
+        margin: 0 0 15px;
+    }
+
+    p{
+        max-width: 490px;
+        padding: 4px 0;
+        font-size: 14px;
+
+        b{
+            font-weight: 900;
+            color: $green;
+        }
+    }
+}
+.btn-more{
+    display: inline-block;
+    text-align: center;
+    background: $green;
+    @include circle(40px);
+    color: $white;
+    font-size: 15px;
+    margin: 30px 0 0 450px;
+    box-sizing: border-box;
+    @include transition(0.3s);
+
+    [class^="icon-"]{
+        line-height: 40px;
+    }
+}
+
+.box-doit{
+    margin:20px 0 0;
+
+    h3{
+        font-family: 'Oswald', sans-serif;
+        text-transform: uppercase;
+        letter-spacing: 0.5625rem;
+        color: $gray;
+        font-size: 30px;
+        border-bottom: $bor-gray;
+    }
+    h4{
+        color: $green;
+        font-size: 23px;
+        font-weight: 900;
+        letter-spacing: 0.2875rem;
+        margin: 20px 0;
+    }
+    ul{
+        font-size: 21px;
+        color: $green;
+
+        li{
+            padding: 5px 0;
+
+            span{
+                color: $gray2;
+            }
+        }
+    }
+
+    .box-tools{
+        margin:20px 0 30px;
+
+        .tit-tools{
+            width: 165px;
+            font-size: 20px;
+            float: left;
+            margin: 0 30px 0 0;
+            text-align: center;
+            font-family: 'Oswald', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 0.25rem;
+
+            span{
+                display: block;
+                background: $green;
+                color: $white;
+                @include border-radius(16px);
+            }
+        }
+        .text-tools{
+            float: left;
+            width: calc(100% - 195px);
+        }
+    }
+}
+.client-us{
+    margin: 40px 0;
+
+    .client-feedbacks{
+        border: none;
+        margin: 20px 0 0;
+    }
+}
+
+/*FIN NOSOTROS*/
+
+/*CONTACTO*/
+.contact-us{
+    padding: 60px 0;
+    
+    &-text{
+        text-align: right;
+        color: $gray3;
+
+        p{
+            font-size: 18px;
+            font-weight: 400;
+            max-width: 360px;
+            float: right;
+        }
+
+        h1{
+            font-family: 'Oswald', sans-serif;
+            color: $green;
+            letter-spacing: 0.3125rem;
+            font-size: 35px;
+            margin: 30px 0;
+        }
+
+        address{
+            font-size: 21px;
+
+            a{
+                color: $gray3;   
+            }
+        }
+    }
+}
+/*FIN CONTACTO*/
 
 /*FORMULARIOS*/
 
@@ -297,20 +694,21 @@ form{
         font-size: 16px;
         padding: 10px;
         @include border-radius(6px);
-        border: $bor-gray;
+        border: $bor-green;
     }
     textarea{
         width: 100%;
         font-size: 16px;
         padding: 10px;
         @include border-radius(6px);
-        height: 100px;
-        border: $bor-gray;
+        height: 160px;
+        border: $bor-green;
     }
     label{
-        font-size: 15px;
-        font-weight: 300;
+        font-size: 18px;
         display: block;
+        color: $gray3;
+        margin: 15px 0 5px;
     }
     fieldset{
         border: none;
@@ -334,39 +732,30 @@ form{
 
 /*FOOTER*/
 footer{
-    background: $white;
-    padding: 40px 0;
-    text-align: center;
+    background: url(../images/logo.svg) 0 0 no-repeat;
+    background-size: 70%;
+    text-align: right;
+    padding: 80px 0 40px;
 
-    @include iplus{
-        padding: 20px 0 30px;
-    }
-
-    p{
-        padding: 0;
-        color: $gray3;
-        font-size: 12px;
-    }
-    .redes{
-        margin: 10px 0 20px;
+    .company-details{
+        margin: 10px 0 0;
     }
 }
 .redes{
-    margin: 10px 0;
-    text-align: center;
 
     a{
         display: inline-block;
+        text-align: center;
         background: $green;
-        @include circle(40px);
+        @include circle(30px);
         color: $white;
-        font-size: 20px;
-        margin: 0 10px;
+        font-size: 16px;
+        margin: 0 7px;
         box-sizing: border-box;
         @include transition(0.3s);
 
         [class^="icon-"]{
-            line-height: 40px;
+            line-height: 30px;
         }
 
     }
