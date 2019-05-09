@@ -1,6 +1,8 @@
 var gulp = require("gulp"),
     cssmin = require("gulp-cssmin"),
     watch = require("gulp-watch"),
+    concat = require("gulp-concat"),
+    uglify = require("gulp-uglify"),
     webserver = require("gulp-webserver"),
     sass = require("gulp-sass");
 
@@ -11,6 +13,19 @@ gulp.task("css", function () {
         .pipe(sass({ outputStyle: 'expanded' }).on('error', sass.logError))
         .pipe(cssmin({ keepSpecialComments: 0 }))
         .pipe(gulp.dest('./content/css/'));
+});
+
+gulp.task("js", function(){
+
+var files = [
+  'node_modules/jquery/dist.core.js',
+  'node_modules/bootstrap/dist/js/bootstrap.js'
+];
+
+  return gulp.src(files, { base: '.' })
+        .pipe(concat("./content/js/app.js"))
+        .pipe(uglify())
+        .pipe(gulp.dest('.'));
 });
 
 //  conf web server
@@ -30,4 +45,4 @@ gulp.task('watch', function () {
 });
 
 // default task
-gulp.task('default', ['watch', 'server']);
+gulp.task('default', ['watch', 'server', 'js']);
