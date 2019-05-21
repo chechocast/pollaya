@@ -26,9 +26,9 @@ get_header();
 					<br/>
 					<h1><?php the_field(texto_2); ?></h1>
 					<address>
-						<div><a href="tel:+573125301090">+57 312 530 10 90</a></div>
-						<div><a href="mailto:aforerom@tressesc.com">aforerom@tressesc.com</a></div>
-						<div>Bogotá • Colombia</div>
+						<div><a href="tel:<?php echo esc_html( get_option('tresse_telefono') ); ?>"><?php echo esc_html( get_option('tresse_telefono') ); ?></a></div>
+						<div><a href="mailto:<?php echo esc_html( get_option('tresse_mail') ); ?>"><?php echo esc_html( get_option('tresse_mail') ); ?></a></div>
+						<div><?php echo esc_html( get_option('tresse_ciudad') ); ?></div>
 					</address>
 				</article>
 				<div class="contact-form">

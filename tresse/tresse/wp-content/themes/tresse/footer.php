@@ -24,9 +24,9 @@
 			?>
 		</nav><!-- #social-menu -->
 		<address class="company-details">
-			<div><a href="tel:+573125301090">+57 312 530 10 90</a></div>
-			<div><a href="mailto">aforerom@tressesc.com</a></div>
-			<div>Bogotá • Colombia</div>
+			<div><a href="tel:<?php echo esc_html( get_option('tresse_telefono') ); ?>"><?php echo esc_html( get_option('tresse_telefono') ); ?></a></div>
+			<div><a href="mailto:<?php echo esc_html( get_option('tresse_mail') ); ?>"><?php echo esc_html( get_option('tresse_mail') ); ?></a></div>
+			<div><?php echo esc_html( get_option('tresse_ciudad') ); ?></div>
 		</address>
 		<div class="site-info">
 			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'tresse' ) ); ?>">

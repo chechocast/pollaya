@@ -335,3 +335,8 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+/**
+ * Implement the Custom Header feature.
+ */
+require get_template_directory() . '/inc/opciones.php';
+
