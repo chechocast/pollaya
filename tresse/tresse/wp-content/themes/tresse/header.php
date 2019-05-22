@@ -17,6 +17,15 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
 
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-title" content="Tresse Creativos">
+	<link rel="apple-touch-icon" href="<?php echo get_template_directory_uri(); ?>/apple-touch-icon.png">
+
+	<meta name="mobile-web-app-capable" content="yes">
+	<meta name="theme-color" content="#2FC594">
+	<meta name="application-name" content="Tresse Creativos">
+	<link rel="icon" type="image/png" href="<?php echo get_template_directory_uri(); ?>/android-icon.png" size="180x180">
+
 	<?php wp_head(); ?>
 </head>
 
