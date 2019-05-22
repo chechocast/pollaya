@@ -16,25 +16,33 @@ get_header();
 ?>
 
 	<div id="primary" class="content-area">
-		<?php while (have_posts()): the_post(); ?>
-			<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+		<?php while (have_posts()): the_post(); 
+			$args = array(
+				'post_type' => 'banners',
+				'posts_per_page' => -1,
+				'orderby' => 'title',
+				'order' => 'ASC'
+			);
+			$banners = new WP_Query($args);
+		?>
+			<div id="slideHome" class="carousel slide" data-ride="carousel">
 				<ol class="carousel-indicators">
-					<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-					<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-					<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+
+					<?php for ($iBanner=0; $iBanner < sizeof($banners->posts); $iBanner++) { 
+						$activeStyle = $iBanner == 0 ? 'active' : '';
+
+					?>
+						<li data-target="#slideHome" data-slide-to="<?=$iBanner?>" class="<?=$activeStyle?>"></li>
+					<?php } ?>
 				</ol>
 				<div class="carousel-inner">
-					<?php 
-						$args = array(
-							'post_type' => 'banners',
-							'posts_per_page' => -1,
-							'orderby' => 'title',
-							'order' => 'ASC'
-						);
-						$banners = new WP_Query($args);
+					<?php
+						$iBanner=0;
 						while($banners->have_posts()): $banners->the_post();
+							$activeStyle = $iBanner == 0 ? 'active' : '';
+							$iBanner++;
 					?>
-					<div class="carousel-item active">
+					<div class="carousel-item <?=$activeStyle?>" >
 						<?php 
 							$id_imagen = get_field('imagen_desktop');							
 							if ($id_imagen){
@@ -49,11 +57,11 @@ get_header();
 					</div>
 					<?php endwhile; wp_reset_postdata(); ?>
 				</div>
-				<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+				<a class="carousel-control-prev" href="#slideHome" role="button" data-slide="prev">
 					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
 					<span class="sr-only">Previous</span>
 				</a>
-				<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+				<a class="carousel-control-next" href="#slideHome" role="button" data-slide="next">
 					<span class="carousel-control-next-icon" aria-hidden="true"></span>
 					<span class="sr-only">Next</span>
 				</a>
@@ -166,3 +174,12 @@ get_header();
 <?php
 get_sidebar();
 get_footer();
+?>
+<script>
+	jQuery(document).on('ready', function(){
+		jQuery('#slideHome').carousel({
+		  interval: 4000
+		});
+	});
+</script>
+<?php
