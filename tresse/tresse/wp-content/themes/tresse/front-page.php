@@ -24,6 +24,20 @@ get_header();
 				'order' => 'ASC'
 			);
 			$banners = new WP_Query($args);
+			$args = array(
+				'post_type' => 'testimonial',
+				'posts_per_page' => -1,
+				'orderby' => 'title',
+				'order' => 'ASC'
+			);
+			$testimonial = new WP_Query($args);
+			$args = array(
+				'post_type' => 'clientes',
+				'posts_per_page' => -1,
+				'orderby' => 'title',
+				'order' => 'ASC'
+			);
+			$clientes = new WP_Query($args);
 		?>
 			<div id="slideHome" class="carousel slide" data-ride="carousel">
 				<ol class="carousel-indicators">
@@ -96,33 +110,44 @@ get_header();
 			</main><!-- #main -->
 			<section class="home-block">
 				<article class="content-all">
-				<?php 
-					$args = array(
-						'post_type' => 'testimonial',
-						'posts_per_page' => -1,
-						'orderby' => 'title',
-						'order' => 'ASC'
-					);
-					$testimonial = new WP_Query($args);
-					while($testimonial->have_posts()): $testimonial->the_post();
-				?>
-					<div class="client-feedbacks">
-						<div class="client-img">
-							<?php the_post_thumbnail('foto-testimonial');  ?>
-						</div>
-						<div class="feedback-box">
-							<blockquote class="message"><?php the_field(testimonial); ?></blockquote>
-							<div class="client">
-								<span class="client-name"><?php the_field(nombre_cliente); ?></span>
-								<span class="client-company">
-									<?php the_field(cargo_cliente); ?>
-									<?php the_field(empresa); ?>
-									</span>
+					<div id="testimonials" class="carousel slide" data-ride="carousel">
+						<ol class="carousel-indicators">
+
+							<?php for ($iTest=0; $iTest < sizeof($testimonial->posts); $iTest++) { 
+								$activeStyle = $iTest == 0 ? 'active' : '';
+
+							?>
+								<li data-target="#testimonials" data-slide-to="<?=$iTest?>" class="<?=$activeStyle?>"></li>
+							<?php } ?>
+						</ol>
+						<div class="carousel-inner">
+							<?php
+								$iTest=0;
+								while($testimonial->have_posts()): $testimonial->the_post();
+									$activeStyle = $iTest == 0 ? 'active' : '';
+									$iTest++;
+							?>
+							<div class="carousel-item <?=$activeStyle?>" >
+								<div class="client-feedbacks">
+									<div class="client-img">
+										<?php the_post_thumbnail('foto-testimonial');  ?>
+									</div>
+									<div class="feedback-box">
+										<blockquote class="message"><?php the_field(testimonial); ?></blockquote>
+										<div class="client">
+											<span class="client-name"><?php the_field(nombre_cliente); ?></span>
+											<span class="client-company">
+												<?php the_field(cargo_cliente); ?>
+												<?php the_field(empresa); ?>
+												</span>
+										</div>
+									</div>
+									<br/>
+								</div>
 							</div>
+							<?php endwhile; wp_reset_postdata(); ?>
 						</div>
-						<br/>
 					</div>
-				<?php endwhile; wp_reset_postdata(); ?>
 				</article>
 			</section><!-- testimoniales-->
 			<section class="home-block">
@@ -146,28 +171,36 @@ get_header();
 						</a>
 					</div>
 				</article>
-			</section>
+			</section><!-- nosotros home-->
 			<section class="content-all">
 				<h2 class="title">Nuestros clientes</h2>
-				<div class="clients-carrusel">
-				<?php 
-					$args = array(
-						'post_type' => 'clientes',
-						'posts_per_page' => -1,
-						'orderby' => 'title',
-						'order' => 'ASC'
-					);
-					$clientes = new WP_Query($args);
-					while($clientes->have_posts()): $clientes->the_post();
-				?>
-					<div class="client-box">
-						<a href="">
-							<?php the_post_thumbnail('logo-cliente');  ?>
-						</a>
+				<div id="clientsCarrusel" class="carousel slide" data-ride="carousel">
+					<ol class="carousel-indicators">
+						<?php for ($iClient=0; $iClient < sizeof($clientes->posts); $iClient++) { 
+							$activeStyle = $iClient == 0 ? 'active' : '';
+
+						?>
+							<li data-target="#clientsList" data-slide-to="<?=$iClient?>" class="<?=$activeStyle?>"></li>
+						<?php } ?>
+					</ol>
+					<div class="carousel-inner">
+						<?php
+							$iClient=0;
+							while($clientes->have_posts()): $clientes->the_post();
+								$activeStyle = $iClient == 0 ? 'active' : '';
+								$iClient++;
+						?>
+						<div class="carousel-item <?=$activeStyle?>" >
+							<div class="client-box">
+								<a href="">
+									<?php the_post_thumbnail('logo-cliente');  ?>
+								</a>
+							</div>
+						</div>
+						<?php endwhile; wp_reset_postdata(); ?>
 					</div>
-				<?php endwhile; wp_reset_postdata(); ?>
 				</div>
-			</section>
+			</section><!-- clientes-->
 		<?php endwhile; ?>  
 	</div><!-- #primary -->
 
@@ -179,6 +212,12 @@ get_footer();
 	jQuery(document).on('ready', function(){
 		jQuery('#slideHome').carousel({
 		  interval: 4000
+		});
+		jQuery('#testimonials').carousel({
+		  interval: 8000
+		});
+		jQuery('#clientsCarrusel').carousel({
+		  interval: 1000
 		});
 	});
 </script>

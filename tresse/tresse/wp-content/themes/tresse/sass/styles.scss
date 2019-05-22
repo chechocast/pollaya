@@ -388,7 +388,7 @@ button{
 .client-feedbacks{
     border-top: 1px dashed #E2E4E7;
     border-bottom: 1px dashed #E2E4E7;
-    padding: 20px 0;
+    padding: 20px 0 35px;
 
     .client-img{
         @include circle(110px);
@@ -503,30 +503,54 @@ button{
         }
     }
 }
-.clients-carrusel{
-    display: grid;
-    grid-template-columns: repeat(6,1fr);
-    grid-gap: 30px;
+#clientsCarrusel{
 
-    @include s{
-        grid-template-columns: repeat(4,1fr);   
-    }
-    @include xxs{
-        grid-gap: 20px;  
+    .carousel-inner{
+        display: grid;
+        grid-template-columns: repeat(6,1fr);
+        grid-gap: 30px;
+
+        @include s{
+            grid-template-columns: repeat(4,1fr);   
+        }
+        @include xxs{
+            grid-gap: 20px;  
+        }
+        .client-box{
+            
+            img{
+                width: 100%;
+                display: block;
+            }
+        }
     }
 
-    .client-box{
-        
-        img{
-            width: 100%;
-            display: block;
+    .carousel-indicators{
+        margin-bottom: 0;
+
+        li{
+            background-color: $gray4;
+            opacity: 1;
+
+            &.active{
+                background-color: $green;
+            }
         }
     }
 }
 
     /*BANNER*/
     .carousel{
-        background: $gray4;
+    }
+    .carousel-indicators{
+
+        li{
+            @include circle(10px);
+
+            &.active{
+                background-color: $green;
+            }
+        }
     }
     .size-banner-desk{
         width: 100%;
@@ -541,6 +565,24 @@ button{
         
         @include s{
             display: block;
+        }
+    }
+    #slideHome{
+        background: $gray4;
+    }
+    #testimonials{
+
+        .carousel-indicators{
+            margin-bottom: 0;
+
+            li{
+                background-color: $gray4;
+                opacity: 1;
+
+                &.active{
+                    background-color: $green;
+                }
+            }
         }
     }
     /*FIN BANNER*/

@@ -93,37 +93,57 @@ get_header();
 					</div>
 				</article>
 			</div>
-
 			<div class="home-block client-us">
-				<h2 class="title">¿Qué opinan nuestros clientes?</h2>
-				<?php 
-					$args = array(
-						'post_type' => 'testimonial',
-						'posts_per_page' => -1,
-						'orderby' => 'title',
-						'order' => 'ASC'
-					);
-					$testimonial = new WP_Query($args);
-					while($testimonial->have_posts()): $testimonial->the_post();
-				?>
-					<div class="client-feedbacks">
-						<div class="client-img">
-							<?php the_post_thumbnail('foto-testimonial');  ?>
-						</div>
-						<div class="feedback-box">
-							<blockquote class="message"><?php the_field(testimonial); ?></blockquote>
-							<div class="client">
-								<span class="client-name"><?php the_field(nombre_cliente); ?></span>
-								<span class="client-company">
-									<?php the_field(cargo_cliente); ?>
-									<?php the_field(empresa); ?>
-									</span>
+				<article class="content-all">
+					<div id="testimonials" class="carousel slide" data-ride="carousel">
+					<?php 
+						$args = array(
+							'post_type' => 'testimonial',
+							'posts_per_page' => -1,
+							'orderby' => 'title',
+							'order' => 'ASC'
+						);
+						$testimonial = new WP_Query($args);
+					?>
+						<ol class="carousel-indicators">
+
+							<?php for ($iTest=0; $iTest < sizeof($testimonial->posts); $iTest++) { 
+								$activeStyle = $iTest == 0 ? 'active' : '';
+
+							?>
+								<li data-target="#testimonials" data-slide-to="<?=$iTest?>" class="<?=$activeStyle?>"></li>
+							<?php } ?>
+						</ol>
+						<div class="carousel-inner">
+							<?php
+								$iTest=0;
+								while($testimonial->have_posts()): $testimonial->the_post();
+									$activeStyle = $iTest == 0 ? 'active' : '';
+									$iTest++;
+							?>
+							<div class="carousel-item <?=$activeStyle?>" >
+								<div class="client-feedbacks">
+									<div class="client-img">
+										<?php the_post_thumbnail('foto-testimonial');  ?>
+									</div>
+									<div class="feedback-box">
+										<blockquote class="message"><?php the_field(testimonial); ?></blockquote>
+										<div class="client">
+											<span class="client-name"><?php the_field(nombre_cliente); ?></span>
+											<span class="client-company">
+												<?php the_field(cargo_cliente); ?>
+												<?php the_field(empresa); ?>
+												</span>
+										</div>
+									</div>
+									<br/>
+								</div>
 							</div>
 						</div>
-						<br/>
+					<?php endwhile; wp_reset_postdata(); ?>
 					</div>
-				<?php endwhile; wp_reset_postdata(); ?>
-			</div>
+				</article>
+			</div><!-- testimoniales-->
 		</section>
 		<?php endwhile; ?> 
 	</div><!-- #primary -->
@@ -131,3 +151,12 @@ get_header();
 <?php
 get_sidebar();
 get_footer();
+?>
+<script>
+	jQuery(document).on('ready', function(){
+		jQuery('#testimonials').carousel({
+		  interval: 8000
+		});
+	});
+</script>
+<?php
