@@ -19,12 +19,12 @@ get_header();
 
 	<div id="primary" class="content-area">
 		<?php while (have_posts()): the_post(); ?>
-		<main id="main" class="site-main">
+		<main id="main" class="site-main content-all">
 			<ul class="list-projects">
 			<?php 
 				$args = array(
 					'post_type' => 'proyectos',
-					'posts_per_page' => 3,
+					'posts_per_page' => -1,
 					'orderby' => 'date',
 					'order' => 'DES'
 				);
