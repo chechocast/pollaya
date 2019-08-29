@@ -7,12 +7,13 @@ $gray: #F3F5FA;
 $gray2: #E2E4E7;
 $gray3: #656968;
 $gray4: #9B9B9B;
-$red: #FF1D45;
-$red2: #B70F28;
+$gray5: #B4BAC0;
+$complementary: #4CC508;
+$principal: #FF1D45;
+$secundary: #B70F28;
 $bor-gray: 1px solid #E2E4E7;
 $white: #FFF;
 $text-color: #676767;
-
 
 
 @mixin border-radius($radius) {
@@ -137,6 +138,35 @@ br{
     clear: both;
 }
 
+/*DESTACADO HEADER*/
+.header-banner{
+    background: $principal;
+    background-size: cover;
+    background-position: center;
+    height: 690px;
+    position: relative;
+
+    .mask-banner{
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        position: absolute;
+        z-index: 0;
+
+        img{
+            display: block;
+            width: 100%;
+        }
+    }
+    .circle-banner{
+        top: 0;
+        right: 0;
+        position: absolute;
+        z-index: 1; 
+    }
+}
+/*FIN DESTACADO HEADER*/
+
 
 /*PAGOS*/
 .content-pricing{
@@ -187,7 +217,7 @@ br{
     }
 }
 .tit-planes{
-    color: $red;
+    color: $principal;
     text-align: center;
     font-weight: 800;
     font-size: 45px;
@@ -255,7 +285,7 @@ br{
             font-size: 30px;
             font-weight: 900;
             line-height: 1;
-            color: $red;
+            color: $principal;
         }
         h4{
             color: $dark;
@@ -272,7 +302,7 @@ br{
             margin: 0;
         }
         .price{
-            color: $red;
+            color: $principal;
             margin: 0;
             padding: 0;
             height: auto;
@@ -283,8 +313,8 @@ br{
         .btn-buy{
             background: transparent;
             font-weight: 700;
-            border: 3px solid $red;
-            color: $red;
+            border: 3px solid $principal;
+            color: $principal;
             font-size: 16px;
             position: relative;
             z-index: 2;
@@ -297,7 +327,7 @@ br{
             text-align: center;
 
             &:hover{
-                background: $red;
+                background: $principal;
                 color: $white;
             }
         }
@@ -377,7 +407,7 @@ br{
 /*FIN PAGOS*/
 .box-appstore{
     font-family: 'Montserrat', sans-serif;
-    background: $red;
+    background: $principal;
     color: $white;
     padding: 80px 0 0;
 
