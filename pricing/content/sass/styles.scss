@@ -145,6 +145,7 @@ br{
     background-position: center;
     height: 690px;
     position: relative;
+    box-shadow: none;
 
     .mask-banner{
         bottom: -1px;
@@ -173,7 +174,7 @@ br{
             width: 100%;
         }
         .img-in{
-            margin: 8% 19% 0 0;
+            margin: 7% 19% 0 0;
             width: 70%;
             border-radius: 50%;
         }
@@ -188,6 +189,163 @@ br{
     }
 }
 /*FIN DESTACADO HEADER*/
+
+/*CARACTERISTICAS*/
+.ld-charact{
+    background: no-repeat;
+    background-position: center 180px;
+    position: relative;
+    
+    .img-cel{
+        width: 360px;
+        margin: 0 auto 80px;
+
+        img{
+            display: block;
+            width: 100%;
+        }
+    }
+
+    .list-charact{
+        position: relative;
+        list-style: none;
+        margin: 0 auto;
+
+        li{
+            color: $gray3;
+            max-width: 285px;
+            text-align: right;
+            position: absolute;
+
+            &:nth-child(1n){
+                top: 290px;
+                left: 50px;
+            }
+
+            &:nth-child(2n){
+                top: 210px;
+                text-align: left;
+                left: calc(50% + 220px);
+            }
+
+            &:nth-child(3n){
+                top: 490px;
+                left: 0;
+            }
+
+            &:nth-child(4n){
+                top: 530px;
+                left: calc(50% + 230px);
+            }
+            &:nth-child(5n){
+                top: 740px;
+                left: calc(50% - 175px);
+                text-align: left;
+                max-width: 350px;
+            
+                .ico-charact{
+                    display: block;
+                    float: left;
+                }
+                div{
+                    float: left;
+                    margin-left: 10px;
+                    width: calc(100% - 80px);
+                }
+            }
+
+            .ico-charact{
+                display: inline-block;
+            }
+
+            h3{
+                color: $dark;
+                font-weight: 700;
+                font-size: 20px;
+                margin: 0 0 5px;
+            }
+            p{
+                font-size: 12px;
+                margin: 0;
+            }
+        }
+    }
+}
+.content-types{
+    background: $gray;
+    position: relative;
+
+    .tit-planes{
+        color: $dark;
+    }
+    .section-legend{
+        text-align: center;
+        color: $gray3;
+    }
+    .img-types{
+        width: 50%;
+        max-width: 840px;
+        position: absolute;
+        right: calc(50% + 60px);
+        margin: 60px 0 0;
+
+        img{
+            display: block;
+            width: 100%;
+        }
+    }
+
+    .list-types{
+        width: 50%;
+        margin: 60px 0 0 50%;
+        padding: 0;
+        list-style: none;
+
+        li{
+            background: $white;
+            margin: 0 0 30px;
+            padding: 30px 30px 10px;
+            box-sizing: border-box;
+            @include border-radius(8px);
+
+            img{
+                display: block;
+                float: left;
+                width: 50px;
+            }
+
+            .txt-type{
+                width: calc(100% - 70px);
+                float: left;
+                margin: 0 0 0 20px;
+            }
+
+            h3{
+                color: $dark;
+                font-weight: 700;
+                font-size: 20px;
+                margin: 7px 0 10px;
+            }
+            p{
+                font-size: 14px;
+                line-height: 23px;
+                color: #969696;
+                margin: 0;
+            }
+        }
+    }
+}
+/*FIN CARACTERISTICAS*/
+.middle-col {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-gap: 0 20px;
+    align-items: center;
+
+    &:after, &:before{
+        display: none;
+    }
+}
 
 
 /*PAGOS*/
