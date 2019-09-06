@@ -345,6 +345,65 @@ br{
     &:after, &:before{
         display: none;
     }
+
+    .box-txt{
+        
+        .tit-planes{
+            text-align: left;
+        }
+
+        h4{
+            font-size: 18px;
+            color: $dark;
+            font-weight: 700;
+        }
+        p{
+            color: $gray3;
+        }
+
+        ul{
+            color: $principal;
+            padding: 0;
+            list-style: none;
+            margin: 10px 0 0;
+            text-align: left;
+
+            li{
+                font-size: 14px;
+                padding: 5px 0;
+
+                i{
+                    font-size: 16px;
+                    display: inline-block;
+                    margin: 0 5px 0 0;
+                }
+            }
+        }
+    }
+}
+
+.sepquote{
+    background: $dark;
+    color: $white;
+    padding: 60px 0;
+
+    h3{
+        font-size: 40px;
+        max-width: 980px;
+        width: 90%;
+        margin: 0 auto 20px;
+        line-height: 110%;
+    }
+
+    .btn{
+        font-size: 25px;
+        background: $principal;
+        color: $white;
+        padding: 13px 35px;
+        border: none;
+        @include border-radius(8px);
+        font-weight: 700;
+    }
 }
 
 
