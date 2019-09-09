@@ -166,6 +166,10 @@ br{
         z-index: 1;
         width: 800px;
 
+        br{
+            display: none;
+        }
+
         @include media(1600px){
             right: -10%;
         }
@@ -197,7 +201,7 @@ br{
             width: 100%;
         }
         .img-in{
-            margin: 7% 19% 0 0;
+            margin: 7% 13% 0 6%;
             width: 70%;
             border-radius: 50%;
         }
@@ -266,6 +270,16 @@ br{
     background-position: center 180px;
     position: relative;
 
+    .clear2{
+        display: none;
+        height: 40px;
+
+        @include s{
+            display: block;
+            clear: both;
+        }
+    }
+
     @include md{
         background-position: center;
     }
@@ -302,15 +316,23 @@ br{
         list-style: none;
         margin: 0 auto;
 
+        br{
+            display: none;
+        }
+
         @include md{
             float: left;
             width: 60%;
 
-            div{
-                    float: left;
-                    margin-left: 10px;
-                    width: calc(100% - 80px);
+            .txt-box{
+                display: inline-block;
+                margin-left: 10px;
+                width: calc(100% - 83px);
+
+                .text{
+                    text-align: left !important;
                 }
+            }
         }
 
         @include s{
@@ -352,12 +374,20 @@ br{
                 @include media(990px){
                     left: -130px;
                 }
+
+                .text{
+                    text-align: right;
+                }
             }
 
             &:nth-child(2n){
                 top: 210px;
                 text-align: left;
                 left: calc(50% + 220px);
+
+                .text{
+                    text-align: left;
+                }
             }
 
             &:nth-child(3n){
@@ -371,11 +401,19 @@ br{
                 @include media(990px){
                     left: -120px;
                 }
+
+                .text{
+                    text-align: right;
+                }
             }
 
             &:nth-child(4n){
                 top: 530px;
                 left: calc(50% + 230px);
+
+                p{
+                    text-align: left;
+                }
             }
             &:nth-child(5n){
                 top: 740px;
@@ -387,10 +425,18 @@ br{
                     display: block;
                     float: left;
                 }
-                div{
+                .txt-box{
                     float: left;
                     margin-left: 10px;
                     width: calc(100% - 80px);
+
+                    &:after{
+                        clear: both;
+                    }
+                }
+
+                .text{
+                    text-align: left;
                 }
             }
 
@@ -624,6 +670,15 @@ br{
     background: $dark;
     color: $white;
     padding: 60px 0;
+    text-align: center;
+
+    .entry-content p{
+       text-align: center; 
+    }
+
+    @include sm{
+        padding: 40px 0;
+    }
 
     h3{
         font-size: 40px;
@@ -631,6 +686,18 @@ br{
         width: 90%;
         margin: 0 auto 20px;
         line-height: 110%;
+
+        @include md{
+            font-size: 30px;
+        }
+
+        @include sm{
+            font-size: 25px;
+        }
+    }
+
+    p{
+        text-align: center;
     }
 
     .btn{
@@ -646,34 +713,75 @@ br{
 .aboutleague{
     position: relative;
     padding: 100px 0 0;
+
+    @include sm{
+        padding: 60px 0 0;
+    }
     
     h2{
         color: $dark;
+        position: relative;
+        z-index: 1;
+        line-height: 140% !important;
+        text-shadow: rgb(255, 255, 255) 5px 0px 0px, rgb(255, 255, 255) 4.90033px 0.993347px 0px, rgb(255, 255, 255) 4.60531px 1.94709px 0px, rgb(255, 255, 255) 4.12668px 2.82321px 0px, rgb(255, 255, 255) 3.48353px 3.58678px 0px, rgb(255, 255, 255) 2.70151px 4.20736px 0px, rgb(255, 255, 255) 1.81179px 4.6602px 0px, rgb(255, 255, 255) 0.849836px 4.92725px 0px, rgb(255, 255, 255) -0.145998px 4.99787px 0px, rgb(255, 255, 255) -1.13601px 4.86924px 0px, rgb(255, 255, 255) -2.08073px 4.54649px 0px, rgb(255, 255, 255) -2.94251px 4.04248px 0px, rgb(255, 255, 255) -3.68697px 3.37732px 0px, rgb(255, 255, 255) -4.28444px 2.57751px 0px, rgb(255, 255, 255) -4.71111px 1.67494px 0px, rgb(255, 255, 255) -4.94996px 0.7056px 0px, rgb(255, 255, 255) -4.99147px -0.291871px 0px, rgb(255, 255, 255) -4.83399px -1.27771px 0px, rgb(255, 255, 255) -4.48379px -2.2126px 0px, rgb(255, 255, 255) -3.95484px -3.05929px 0px, rgb(255, 255, 255) -3.26822px -3.78401px 0px, rgb(255, 255, 255) -2.4513px -4.35788px 0px, rgb(255, 255, 255) -1.53666px -4.75801px 0px, rgb(255, 255, 255) -0.560763px -4.96845px 0px, rgb(255, 255, 255) 0.437495px -4.98082px 0px, rgb(255, 255, 255) 1.41831px -4.79462px 0px, rgb(255, 255, 255) 2.34258px -4.41727px 0px, rgb(255, 255, 255) 3.17346px -3.86382px 0px, rgb(255, 255, 255) 3.87783px -3.15633px 0px, rgb(255, 255, 255) 4.4276px -2.32301px 0px, rgb(255, 255, 255) 4.80085px -1.39708px 0px, rgb(255, 255, 255) 4.98271px -0.415447px 0px;
     }
     h3{
         color: $gray5;
         text-align: center;
         font-size: 30px;
         font-weight: 700;
+        line-height: 140% !important;
+        text-shadow: rgb(255, 255, 255) 5px 0px 0px, rgb(255, 255, 255) 4.90033px 0.993347px 0px, rgb(255, 255, 255) 4.60531px 1.94709px 0px, rgb(255, 255, 255) 4.12668px 2.82321px 0px, rgb(255, 255, 255) 3.48353px 3.58678px 0px, rgb(255, 255, 255) 2.70151px 4.20736px 0px, rgb(255, 255, 255) 1.81179px 4.6602px 0px, rgb(255, 255, 255) 0.849836px 4.92725px 0px, rgb(255, 255, 255) -0.145998px 4.99787px 0px, rgb(255, 255, 255) -1.13601px 4.86924px 0px, rgb(255, 255, 255) -2.08073px 4.54649px 0px, rgb(255, 255, 255) -2.94251px 4.04248px 0px, rgb(255, 255, 255) -3.68697px 3.37732px 0px, rgb(255, 255, 255) -4.28444px 2.57751px 0px, rgb(255, 255, 255) -4.71111px 1.67494px 0px, rgb(255, 255, 255) -4.94996px 0.7056px 0px, rgb(255, 255, 255) -4.99147px -0.291871px 0px, rgb(255, 255, 255) -4.83399px -1.27771px 0px, rgb(255, 255, 255) -4.48379px -2.2126px 0px, rgb(255, 255, 255) -3.95484px -3.05929px 0px, rgb(255, 255, 255) -3.26822px -3.78401px 0px, rgb(255, 255, 255) -2.4513px -4.35788px 0px, rgb(255, 255, 255) -1.53666px -4.75801px 0px, rgb(255, 255, 255) -0.560763px -4.96845px 0px, rgb(255, 255, 255) 0.437495px -4.98082px 0px, rgb(255, 255, 255) 1.41831px -4.79462px 0px, rgb(255, 255, 255) 2.34258px -4.41727px 0px, rgb(255, 255, 255) 3.17346px -3.86382px 0px, rgb(255, 255, 255) 3.87783px -3.15633px 0px, rgb(255, 255, 255) 4.4276px -2.32301px 0px, rgb(255, 255, 255) 4.80085px -1.39708px 0px, rgb(255, 255, 255) 4.98271px -0.415447px 0px;
+        
+        @include s{
+            font-size: 23px;
+        }
+
     }
     h4{
         font-weight: 700;
         text-align: center;
         color: $dark;
+        line-height: 140% !important;
     }
     p{
         text-align: justify;
+        line-height: 140% !important;
     }
     .box-txt{
         max-width: 600px;
         width: 90%;
         margin: 40px auto 100px;
         font-size: 16px;
+        position: relative;
+        z-index: 1;
+        text-shadow: rgb(255, 255, 255) 5px 0px 0px, rgb(255, 255, 255) 4.90033px 0.993347px 0px, rgb(255, 255, 255) 4.60531px 1.94709px 0px, rgb(255, 255, 255) 4.12668px 2.82321px 0px, rgb(255, 255, 255) 3.48353px 3.58678px 0px, rgb(255, 255, 255) 2.70151px 4.20736px 0px, rgb(255, 255, 255) 1.81179px 4.6602px 0px, rgb(255, 255, 255) 0.849836px 4.92725px 0px, rgb(255, 255, 255) -0.145998px 4.99787px 0px, rgb(255, 255, 255) -1.13601px 4.86924px 0px, rgb(255, 255, 255) -2.08073px 4.54649px 0px, rgb(255, 255, 255) -2.94251px 4.04248px 0px, rgb(255, 255, 255) -3.68697px 3.37732px 0px, rgb(255, 255, 255) -4.28444px 2.57751px 0px, rgb(255, 255, 255) -4.71111px 1.67494px 0px, rgb(255, 255, 255) -4.94996px 0.7056px 0px, rgb(255, 255, 255) -4.99147px -0.291871px 0px, rgb(255, 255, 255) -4.83399px -1.27771px 0px, rgb(255, 255, 255) -4.48379px -2.2126px 0px, rgb(255, 255, 255) -3.95484px -3.05929px 0px, rgb(255, 255, 255) -3.26822px -3.78401px 0px, rgb(255, 255, 255) -2.4513px -4.35788px 0px, rgb(255, 255, 255) -1.53666px -4.75801px 0px, rgb(255, 255, 255) -0.560763px -4.96845px 0px, rgb(255, 255, 255) 0.437495px -4.98082px 0px, rgb(255, 255, 255) 1.41831px -4.79462px 0px, rgb(255, 255, 255) 2.34258px -4.41727px 0px, rgb(255, 255, 255) 3.17346px -3.86382px 0px, rgb(255, 255, 255) 3.87783px -3.15633px 0px, rgb(255, 255, 255) 4.4276px -2.32301px 0px, rgb(255, 255, 255) 4.80085px -1.39708px 0px, rgb(255, 255, 255) 4.98271px -0.415447px 0px;
+
+        @include lg{
+            margin: 40px auto;
+            width: 530px;
+        }
+
+        @include sm{
+            width: 400px;
+        }
+        @include s{
+            width: 100%;
+            margin: 40px auto 0;
+        }
     }
 
     .img-1{
         top: 170px;
         left: -70px;
+
+        @include xl{
+            left: -90px;
+        }
+
+        @include xxs{
+            display: none;
+        }
 
         img{
             display: block;
@@ -684,6 +792,10 @@ br{
         top: 90px;
         right: -70px;
 
+        @include xl{
+            right: -90px;
+        }
+
         img{
             display: block;
             width: 100%;
@@ -693,6 +805,41 @@ br{
         position: absolute;
         z-index: 0;
         width: 430px;
+
+        @include media(1320px){
+            width: 370px;
+        }
+
+        @include xl{
+            width: 300px;
+        }
+
+        @include md{
+            width: 250px;
+        }
+
+        @include s{
+            position: relative;
+            left: auto !important;
+            right: auto !important;
+            top: auto !important;
+            width: 40%;
+            margin: 0 5% 30px;
+            float: left;
+        }
+
+        @include xxs{
+            float: none;
+            margin: 0 auto 40px;
+            width: 70%;
+        }
+        @include iplus{
+            width: 90%;
+        }
+
+        br{
+            display: none;
+        }
 
         .mask{
             position: absolute;
@@ -708,14 +855,46 @@ br{
     align-items: center;
     z-index: 1;
 
+    br{
+        display: none;
+    }
+
+    @include s{
+        grid-template-columns: repeat(4,1fr);
+    }
+    @include iplus{
+        grid-template-columns: repeat(3,1fr);
+    }
+
     a{
         display: block;
-        padding: 50px 0;
+        padding: 17% 0;
         z-index: 1;
         position: relative;
 
         &:hover{
             background: $gray;
+        }
+
+        img{
+            max-width: 150px;
+            max-height: 150px;
+            margin: 0 auto;
+            display: block;
+
+            @include xl{
+                max-width: 120px;
+                max-height: 120px;
+            }
+
+            @include md{
+                max-width: 100px;
+                max-height: 100px;
+            }
+            @include sm{
+                max-width: 80px;
+                max-height: 80px;
+            }
         }
     }
 }
@@ -972,7 +1151,11 @@ br{
         padding: 40px 0;  
     }
     @include xxs{
-        padding: 30px 0 0;  
+        padding: 30px 0 0;
+
+        br{
+            display: none;
+        }
     }
 
     .img-app{
@@ -1022,6 +1205,10 @@ br{
         @include s{
             width: calc(100% - 200px);
             padding: 70px 0 0;
+
+            p{
+                text-align: center;
+            }
         }
 
         @include xxs{
@@ -1030,18 +1217,8 @@ br{
             padding: 0;
             text-align: center;
         }
-
-        img{
-
-            @include sm{
-                height: 50px;
-            }
-
-            @include xxs{
-                height: 50px;
-                display: block;
-                margin: 0 auto;
-            }
+        br{
+            display: none;
         }
     }
 
@@ -1062,7 +1239,7 @@ br{
         }
         @include xs{
             font-size: 25px;
-            margin: 0;
+            margin: 0 0 20px;
         }
     }
     .btn{
@@ -1075,7 +1252,21 @@ br{
         box-sizing: border-box;
         font-size: 16px;
         font-weight: 600;
-        margin: 0 15px 0 0;
+
+        @include iplus{
+            width: 140px;
+        }
+
+        @include i5{
+            width: auto;
+        }
+
+        &:nth-child(1n){
+            margin: 0 15px 0 0;
+        }
+        &:nth-child(2n){
+            margin: 0;
+        }
 
         &:hover{
             color: $principal
