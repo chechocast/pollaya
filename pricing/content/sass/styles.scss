@@ -143,9 +143,9 @@ br{
     background: $principal;
     background-size: cover;
     background-position: center;
-    height: 690px;
     position: relative;
     box-shadow: none;
+    height: auto;
 
     .mask-banner{
         bottom: -1px;
@@ -166,6 +166,29 @@ br{
         z-index: 1;
         width: 800px;
 
+        @include media(1600px){
+            right: -10%;
+        }
+        @include media(1400px){
+            right: -13%;
+            width: 700px;
+        }
+        @include xl{
+            right: -10%;
+            width: 500px;
+        }
+        @include lg{
+            width: 400px;
+            top: 120px;
+        }
+        @include md{
+            width: 360px;
+            top: 150px;
+        }
+        @include media(680px){
+            display: none;
+        }
+
         .mask{
             display: block;
             position: absolute;
@@ -182,10 +205,57 @@ br{
     .intro-text{
         z-index: 1;
         position: relative;
-        font-size: 40px;
-        line-height: 50px;
-        text-align: left;
         max-width: 650px;
+
+        @include xl{
+            width: 590px;
+            max-width: 100%;
+        }
+        @include lg{
+            width: 520px;
+        }
+        @include md{
+            width: 470px;
+        }
+        @include s{
+            width: 100%;
+        }
+
+        h1{
+            font-size: 40px;
+            line-height: 50px;
+            text-align: left;
+
+            @include xl{
+                font-size: 35px;
+                line-height: 38px;
+            }
+            @include md{
+                font-size: 30px;
+                line-height: 35px;
+            }
+            @include s{
+                text-align: center;
+            }
+        }
+
+        a{
+            font-size: 20px;
+            line-height: normal;
+            font-weight: 700;
+            background: $principal;
+            border: none;
+            @include border-radius(8px);
+            padding: 13px 35px;
+            text-transform: none;
+            display: block;
+            max-width: 200px;
+
+            @include s{
+                display: inline-block;
+                max-width: 100%;
+            }
+        }
     }
 }
 /*FIN DESTACADO HEADER*/
@@ -195,10 +265,31 @@ br{
     background: no-repeat;
     background-position: center 180px;
     position: relative;
+
+    @include md{
+        background-position: center;
+    }
+    @include s{
+        padding: 30px 0 0;
+    }
     
     .img-cel{
         width: 360px;
         margin: 0 auto 80px;
+
+        @include md{
+            margin: 0;
+            float: right;
+            width: 40%;
+        }
+
+        @include s{
+            margin: 0 auto;
+            width: 300px;
+            float: none;
+            height: 320px;
+            overflow: hidden;
+        }
 
         img{
             display: block;
@@ -211,15 +302,56 @@ br{
         list-style: none;
         margin: 0 auto;
 
+        @include md{
+            float: left;
+            width: 60%;
+
+            div{
+                    float: left;
+                    margin-left: 10px;
+                    width: calc(100% - 80px);
+                }
+        }
+
+        @include s{
+            width: 100%;
+            float: none;
+        }
+
         li{
             color: $gray3;
             max-width: 285px;
             text-align: right;
             position: absolute;
 
+            @include md{
+                position: relative;
+                top: auto !important;
+                left: auto !important;
+                right: auto !important;
+                max-width: 100% !important;
+                text-align: left;
+                margin: 0 0 30px;
+            }
+
+            @include sm{
+                margin: 0 0 20px;
+            }
+
+            @include s{
+                margin: 0 0 40px;
+            }
+
             &:nth-child(1n){
                 top: 290px;
                 left: 50px;
+
+                @include xl{
+                    left: -40px;
+                }
+                @include media(990px){
+                    left: -130px;
+                }
             }
 
             &:nth-child(2n){
@@ -231,6 +363,14 @@ br{
             &:nth-child(3n){
                 top: 490px;
                 left: 0;
+
+                @include xl{
+                    left: -30px;
+                }
+
+                @include media(990px){
+                    left: -120px;
+                }
             }
 
             &:nth-child(4n){
@@ -256,6 +396,15 @@ br{
 
             .ico-charact{
                 display: inline-block;
+
+                @include md{
+                    width: 50px;
+                    display: block;
+                    float: left;
+                }
+                @include s{
+                    width: 65px;
+                }
             }
 
             h3{
@@ -289,6 +438,32 @@ br{
         right: calc(50% + 60px);
         margin: 60px 0 0;
 
+        @include media(1400px){
+            margin: 100px 0 0;
+        }
+        @include xl{
+            margin: 130px 0 0;
+        }
+        @include lg{
+            margin: 110px 0 0;
+            width: 70%;
+        }
+        @include md{
+            margin: 130px 0 0;
+            width: 80%;
+            right: calc(50% + 20px);
+        }
+
+        @include sm{
+            position: relative;
+            margin: 40px auto;
+            right: 0;
+            width: 70%;
+        }
+        @include xs{
+            width: 85%;
+        }
+
         img{
             display: block;
             width: 100%;
@@ -301,6 +476,19 @@ br{
         padding: 0;
         list-style: none;
 
+        @include sm{
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        @include xs{
+            width: 100%;
+        }
+
+        &:after{
+            clear: both;
+        }
+
         li{
             background: $white;
             margin: 0 0 30px;
@@ -308,16 +496,31 @@ br{
             box-sizing: border-box;
             @include border-radius(8px);
 
+            @include sm{
+                padding: 20px;
+            }
+
             img{
                 display: block;
                 float: left;
                 width: 50px;
+
+                @include xxs{
+                    float: none;
+                    margin: 0 auto;
+                }
             }
 
             .txt-type{
                 width: calc(100% - 70px);
                 float: left;
                 margin: 0 0 0 20px;
+
+                @include xxs{
+                    float: none;
+                    width: 100%;
+                    margin: 10px 0 0;
+                }
             }
 
             h3{
@@ -325,12 +528,24 @@ br{
                 font-weight: 700;
                 font-size: 20px;
                 margin: 7px 0 10px;
+
+                @include sm{
+                    margin-top: 0;
+                }
+                @include xxs{
+                    text-align: center;
+                }
             }
             p{
                 font-size: 14px;
                 line-height: 23px;
                 color: #969696;
                 margin: 0;
+
+                @include xxs{
+                    line-height: 130%;
+                    text-align: justify;
+                }
             }
         }
     }
@@ -342,6 +557,10 @@ br{
     grid-gap: 0 20px;
     align-items: center;
 
+    @include media(680px){
+        display: block;
+    }
+
     &:after, &:before{
         display: none;
     }
@@ -350,6 +569,10 @@ br{
         
         .tit-planes{
             text-align: left;
+
+            @include media(680px){
+                text-align: center;
+            }
         }
 
         h4{
@@ -380,6 +603,21 @@ br{
             }
         }
     }
+    .img-mid{
+        grid-column: 2/2;
+        grid-row: 1/2;
+        margin: 0 auto;
+
+        @include media(680px){
+            width: 250px;
+            margin: 0 auto 20px;
+        }
+
+        img{
+            display: block;
+            margin: 0 auto;
+        }
+    }
 }
 
 .sepquote{
@@ -403,6 +641,82 @@ br{
         border: none;
         @include border-radius(8px);
         font-weight: 700;
+    }
+}
+.aboutleague{
+    position: relative;
+    padding: 100px 0 0;
+    
+    h2{
+        color: $dark;
+    }
+    h3{
+        color: $gray5;
+        text-align: center;
+        font-size: 30px;
+        font-weight: 700;
+    }
+    h4{
+        font-weight: 700;
+        text-align: center;
+        color: $dark;
+    }
+    p{
+        text-align: justify;
+    }
+    .box-txt{
+        max-width: 600px;
+        width: 90%;
+        margin: 40px auto 100px;
+        font-size: 16px;
+    }
+
+    .img-1{
+        top: 170px;
+        left: -70px;
+
+        img{
+            display: block;
+            width: 100%;
+        }
+    }
+    .img-2{    
+        top: 90px;
+        right: -70px;
+
+        img{
+            display: block;
+            width: 100%;
+        }
+    }
+    .img-1, .img-2{
+        position: absolute;
+        z-index: 0;
+        width: 430px;
+
+        .mask{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+        }
+    }
+}
+.other-cups{
+    display: grid;
+    grid-template-columns: repeat(6,1fr);
+    align-items: center;
+    z-index: 1;
+
+    a{
+        display: block;
+        padding: 50px 0;
+        z-index: 1;
+        position: relative;
+
+        &:hover{
+            background: $gray;
+        }
     }
 }
 
@@ -564,6 +878,7 @@ br{
             box-sizing: border-box;
             padding: 10px;
             text-align: center;
+            @include border-radius(8px);
 
             &:hover{
                 background: $principal;
@@ -590,7 +905,7 @@ br{
         &.novato{
 
             h3{
-                color: #B4BAC0;
+                color: $gray5;
             }
 
             .price{
@@ -748,6 +1063,22 @@ br{
         @include xs{
             font-size: 25px;
             margin: 0;
+        }
+    }
+    .btn{
+        background: $white;
+        color: $black;
+        @include border-radius(8px);
+        width: 160px;
+        border: none;
+        padding: 15px 10px;
+        box-sizing: border-box;
+        font-size: 16px;
+        font-weight: 600;
+        margin: 0 15px 0 0;
+
+        &:hover{
+            color: $principal
         }
     }
 }
