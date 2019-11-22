@@ -314,6 +314,13 @@ br{
             width: 100%;
         }
     }
+    .img-desk-emp{
+        width: 600px;
+        margin: 0 auto 40px;
+    }
+    .box-emp{
+        text-align: center;
+    }
 
     .list-charact{
         position: relative;
@@ -705,7 +712,7 @@ br{
     }
 
     .btn{
-        font-size: 25px;
+        font-size: 23px;
         background: $principal;
         color: $white;
         padding: 13px 35px;
@@ -1277,3 +1284,550 @@ br{
         }
     }
 }
+
+/*LANDING EMPRESAS*/
+.header-banner-empresas{
+    background: $dark;
+    position: relative;
+    box-shadow: none;
+    height: auto;
+    padding: 260px 0;
+
+    .bk-wrap{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        overflow: hidden;
+        opacity: 0.5;
+        z-index: 0;
+
+        img{
+            width: 100%;
+        }
+    }
+
+    .mask-banner{
+        bottom: -1px;
+        left: 0;
+        width: 100%;
+        position: absolute;
+        z-index: 0;
+
+        img{
+            display: block;
+            width: 100%;
+        }
+    }
+    .intro-text{
+        z-index: 1;
+        position: relative;
+        max-width: 690px;
+        text-transform: inherit;
+
+        @include xl{
+            width: 590px;
+            max-width: 100%;
+        }
+        @include lg{
+            width: 520px;
+        }
+        @include md{
+            width: 470px;
+        }
+        @include s{
+            width: 100%;
+        }
+
+        h2{
+            font-size: 40px;
+            line-height: 50px;
+            text-align: left;
+
+            @include xl{
+                font-size: 35px;
+                line-height: 38px;
+            }
+            @include md{
+                font-size: 30px;
+                line-height: 35px;
+            }
+            @include s{
+                text-align: center;
+            }
+        }
+
+        p{
+            text-align: center;
+        }
+
+        a{
+            font-size: 20px;
+            line-height: normal;
+            font-weight: 700;
+            background: $principal;
+            border: none;
+            @include border-radius(8px);
+            padding: 13px 35px;
+            text-transform: none;
+            display: block;
+            max-width: 200px;
+
+            @include s{
+                display: inline-block;
+                max-width: 100%;
+            }
+        }
+    }
+}
+.ld-main-emp{
+    background: no-repeat;
+    background-position: center 80px;
+    position: relative;
+    padding-top: 0;
+    margin-top: -180px;
+
+    @include md{
+        background-position: center;
+    }
+    @include s{
+        padding: 30px 0 0;
+    }
+    
+    .img-desk-emp{
+        width: 600px;
+        margin: 0 auto 40px;
+    }
+    .box-emp{
+        text-align: center;
+    }
+
+    h1{
+        color: $dark;
+        font-size: 40px;
+        margin: 0 0 20px;
+    }
+    p{
+        font-size: 20px;
+        font-weight: 400;
+    }
+    .btn{
+        font-size: 23px;
+        background: $principal;
+        color: $white;
+        padding: 13px 35px;
+        border: none;
+        @include border-radius(8px);
+        font-weight: 700;
+    }
+    .bt-charact{
+        display: block;
+        margin: 10px 0 0;
+        padding: 13px 0;
+        font-size: 23px;
+        color: $principal;
+    }
+}
+.content-types-emp{
+    background: $gray;
+    position: relative;
+    padding-bottom: 0;
+
+    .tit-planes{
+        color: $dark;
+    }
+
+    h3{
+        color: $dark;
+        text-align: center;
+        font-size: 30px;
+        font-weight: 700;
+        line-height: 140% !important;
+        
+        @include s{
+            font-size: 23px;
+        }
+
+    }
+
+    .section-legend{
+        text-align: center;
+        color: $gray3;
+        margin: 0 0 10px;
+        font-size: 20px;
+    }
+    .img-types{
+        width: 50%;
+        float: left;
+        margin: 20px auto 30px;
+
+        img{
+            display: block;
+            max-width: 360px;
+            margin: 0 auto;
+        }
+    }
+
+    .list-types{
+        width: 50%;
+        float: right;
+        padding: 0;
+        margin: 100px 0 0;
+        list-style: none;
+
+        @include sm{
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        @include xs{
+            width: 100%;
+        }
+
+        &:after{
+            clear: both;
+        }
+
+        li{
+            background: $white;
+            margin: 0 0 30px;
+            padding: 30px 30px 10px;
+            box-sizing: border-box;
+            @include border-radius(8px);
+
+            @include sm{
+                padding: 20px;
+            }
+
+            img{
+                display: block;
+                float: left;
+                width: 50px;
+
+                @include xxs{
+                    float: none;
+                    margin: 0 auto;
+                }
+            }
+
+            .txt-type{
+                width: calc(100% - 70px);
+                float: left;
+                margin: 0 0 0 20px;
+
+                @include xxs{
+                    float: none;
+                    width: 100%;
+                    margin: 10px 0 0;
+                }
+            }
+
+            h3{
+                color: $dark;
+                font-weight: 700;
+                font-size: 20px;
+                margin: 7px 0 10px;
+                text-align: left;
+
+                @include sm{
+                    margin-top: 0;
+                }
+                @include xxs{
+                    text-align: center;
+                }
+            }
+            p{
+                font-size: 14px;
+                line-height: 23px;
+                color: #969696;
+                margin: 0;
+
+                @include xxs{
+                    line-height: 130%;
+                    text-align: justify;
+                }
+            }
+        }
+    }
+    .btn{
+        font-size: 23px;
+        background: $principal;
+        color: $white;
+        padding: 13px 0;
+        border: none;
+        @include border-radius(8px);
+        font-weight: 700;
+        margin: 0 auto;
+        max-width: 200px;
+        display: block;
+    }
+}
+.content-agencias{
+    background: #B1CEEF;
+
+    .tit-planes, h4, p{
+        color: $white !important;
+    }
+    .btn{
+        font-size: 20px;
+        background: $principal;
+        color: $white;
+        padding: 13px 30px;
+        border: none;
+        @include border-radius(8px);
+        font-weight: 700;
+    }
+}
+.block-emp{
+    position: relative;
+    height: 800px;
+    padding: 0;
+
+    .bkg-img{
+        width: 50%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-position: right center !important;
+        background-size: auto 100% !important;
+
+        &:after{
+            background: rgb(255,29,69);
+            background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%);
+            content: '';
+            top: 0;
+            left: 0;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+    }
+    .box-txt{
+        max-width: 570px;
+        margin: 0 0 0 50%;
+        padding: 0 0 0 20px;
+        display: grid;
+        grid-template-columns: 1fr;
+        align-items: center;
+        height: 100%;
+        
+        .tit-planes{
+            text-align: left;
+
+            @include media(680px){
+                text-align: center;
+            }
+        }
+
+        h4{
+            font-size: 18px;
+            color: $dark;
+            font-weight: 700;
+        }
+        p{
+            color: $gray3;
+        }
+        .text{
+            font-size: 20px;
+        }
+    }
+    .btn{
+        font-size: 23px;
+        background: $principal;
+        color: $white;
+        padding: 13px 35px;
+        border: none;
+        @include border-radius(8px);
+        font-weight: 700;
+    }
+}
+.block-red{
+    background: $principal;
+    color: $white;
+
+    .bkg-img:after{
+        background: rgb(255,29,69);
+        background: linear-gradient(90deg, rgba(255,29,69,0) 0%, rgba(255,29,69,1) 100%);
+    }
+
+    .tit-planes{
+        color: $white;
+    }
+    p.text{
+        color: $white;
+    }
+    .btn{
+        background: $white;
+        color: $principal;
+    }
+}
+.block-black{
+    background: $dark;
+    color: $white;
+
+    .bkg-img:after{
+        background: rgb(42,41,46);
+        background: linear-gradient(90deg, rgba(42,41,46,0) 0%, rgba(42,41,46,1) 100%);
+    }
+
+    .tit-planes{
+        color: $white;
+    }
+    p.text{
+        color: $white;
+    }
+}
+.block-right{
+
+    .bkg-img{
+        left: auto;
+        right: 0;
+
+        &:after{
+            background: rgb(255,255,255);
+            background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
+        }
+    }
+    .box-txt{
+        margin: 0 auto;
+        max-width: 1170px;
+        padding: 0 20px 0 0;
+
+        .tit-planes, h4, p{
+            max-width: 570px;
+        }
+    }
+}
+.content-personalization{
+    background: $gray;
+    position: relative;
+    padding-bottom: 0;
+
+    .tit-planes{
+        color: $dark;
+    }
+
+    h3{
+        color: $dark;
+        text-align: center;
+        font-size: 30px;
+        font-weight: 700;
+        line-height: 140% !important;
+        
+        @include s{
+            font-size: 23px;
+        }
+
+    }
+
+    .section-legend{
+        text-align: center;
+        color: $gray3;
+        margin: 0 0 10px;
+        font-size: 20px;
+    }
+
+    .list-person{
+        position: relative;
+        list-style: none;
+        margin: 40px auto;
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        grid-gap: 0 90px;
+        align-items: center;
+
+        br{
+            display: none;
+        }
+
+        @include s{
+            width: 100%;
+            float: none;
+        }
+
+        li{
+            color: $gray3;
+            margin: 0 0 30px;
+            text-align: left;
+
+            @include sm{
+                margin: 0 0 20px;
+            }
+
+            @include s{
+                margin: 0 0 40px;
+            }
+
+            .ico-charact{
+                display: block;
+                float: left;
+
+                @include md{
+                    width: 50px;
+                }
+                @include s{
+                    width: 65px;
+                }
+            }
+
+            .txt-box{
+                float: left;
+                margin-left: 10px;
+                width: calc(100% - 80px);
+                text-align: left;
+
+                &:after{
+                    clear: both;
+                }
+            }
+
+            h3{
+                color: $dark;
+                font-weight: 700;
+                font-size: 20px;
+                margin: 0 0 5px;
+                text-align: left;
+            }
+            p{
+                margin: 0;
+                text-align: left;
+            }
+        }
+    }
+
+    .img-person{
+        max-width: 906px;
+        margin: 0 auto 50px;
+
+        img{
+            display: block;
+            width: 100%;
+        }
+    }
+}
+.box-personalization{
+    padding-bottom: 0;
+
+    ul{
+        padding: 15px 20px !important;
+        list-style: none;
+        margin: 10px 0 0;
+        text-align: left;
+
+        li{
+            font-size: 12px;
+            color: $gray3;
+            padding: 5px 0;
+
+            i{
+                font-size: 16px;
+                display: inline-block;
+                margin: 0 5px 0 0;
+                color: #4CC508;
+            }
+        }
+    }
+}
+/*LANDING EMPRESAS*/
