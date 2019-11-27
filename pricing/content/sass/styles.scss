@@ -1715,6 +1715,8 @@ br{
             max-width: 100%;
             margin: 0 auto;
             padding: 0;
+        }
+        @include s{
             display: block;
         }
         
@@ -2063,23 +2065,19 @@ br{
         }
 
         img{
-            max-width: 150px;
-            max-height: 150px;
+            max-width: 200px;
+            max-height: 200px;
             margin: 0 auto;
             display: block;
 
-            @include xl{
-                max-width: 120px;
-                max-height: 120px;
-            }
 
             @include md{
-                max-width: 100px;
-                max-height: 100px;
+                max-width: 150px;
+                max-height: 150px;
             }
             @include sm{
-                max-width: 80px;
-                max-height: 80px;
+                max-width: 100px;
+                max-height: 100px;
             }
         }
     }
