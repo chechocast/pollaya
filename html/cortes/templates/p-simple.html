@@ -1,0 +1,284 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Pollaya</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,600,700,800" rel="stylesheet">
+    <link rel="stylesheet" href="../content/css/bootstrap-theme.min.css" />
+    <link rel="stylesheet" href="../content/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../content/css/styles.css" />
+
+    <!--[if IE]>
+		<script type="text/javascript">
+			 var console = { log: function() {} };
+		</script>
+	<![endif]-->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
+
+	<script type="text/javascript">
+		function mshow(){
+			if($('#menu').hasClass('show-menu')){
+				$('#menu').removeClass('show-menu');
+			}
+			else{
+				$('#menu').addClass('show-menu');	
+			}
+		}
+		function mclose(){
+			if($('.menu-icon').hasClass('menu-closed')){
+				$('.menu-icon').removeClass('menu-closed');
+			}
+			else{
+				$('.menu-icon').addClass('menu-closed');	
+			}
+		}
+	</script>
+</head>
+<body ng-app="ngAnimate">
+	<header>
+		<button class="btn-menu" type="button" onclick="mshow(); mclose()">
+            <span class="menu-icon">
+                <label>
+                    <i></i>
+                    <i></i>
+                </label>
+            </span>
+        </button>
+        <div class="content-menu" id="menu">
+			<div class="menu-big">
+				<nav class="menu-nav">
+					<h2 class="active"><a href="index.html">Inicio</a></h2>
+					<h2><a href="mispollas.html">Mis Pollas</a></h2>
+					<h2><a href="crearpolla.html">Crear polla</a></h2>
+					<h2><a class="log-out" href="login.html">Cerrar sesión</a></h2>
+				</nav>
+			</div>
+		</div>
+		<h1 class="logo">
+		<a href="/">
+			<img src="../content/images/logo.png">
+			<span>Pollaya - Juega con todos tus amigos</span>
+		</a>
+		</h1>
+		<div class="user-wraper">
+			<!--<a class="login" href="">Iniciar sesión</a>-->
+			<a class="btn-noti" href="notificaciones.html">
+				<i class="icon-bell"></i>
+				<span>00</span>
+			</a>
+			<div class="user-img">
+				<a href="misdatos.html">
+					<div class="no-img">J</div>
+					<img src="https://scontent.fbog2-1.fna.fbcdn.net/v/t1.0-1/p56x56/14368897_1083015501806273_3197812012577248045_n.jpg?oh=e0ba28e2d93f5a799ac2d262b2ff862c&oe=5959FBE8">
+				</a>
+			</div>
+			<br/>
+		</div>
+		<br/>
+	</header>
+	<div class="pg-body">
+		<section>
+			<article class="content-all">
+				<a class="btn-back" ng-click="main.back()" href="">
+		            <span class="icon-prev"></span>
+		            Volver
+		        </a>
+		        <div class="miga">
+		            Estás en / <a href="/">Inicio</a> / <a href="mispollas.html">Mis pollas</a> / <span>los mundialistas</span>
+		        </div>
+		        <br/>
+				<h1 class="tit-section">Colombia gana</h1>
+				<div class="interna-polla">
+					<div class="tit-time">Inicio del partido: 12:12:20</div>
+					<div class="box-match">
+						<div class="img-flag">
+							<img src="../content/images/flags/flag-col.png" alt="" />
+							<h2>Colombia</h2>
+						</div>
+						<div class="score-box">
+							<div>-</div>
+							<label>VS</label>
+							<div>-</div>
+						</div>
+						<div class="img-flag">
+							<img src="../content/images/flags/flag-sen.png" alt="" />
+							<h2>Senegal</h2>
+						</div>
+						<br/>
+					</div>
+					<h3>Ganador</h3>
+					<div class="name-win">Andres Camargo</div>
+					<ol class="list-score">
+						<h3>Pronosticos</h3>
+						<button class="btn btn-default">Agregar jugador</button>
+						<li>
+							<b>1.</b>
+							<span class="name">Juanita Bermudez</span>
+							<div class="score-points">
+								<input type="number" />
+								-
+								<input type="number" />
+							</div>
+						</li>
+						<li>
+							<b>2.</b>
+							<span class="name">Pedro Perez</span>
+							<div class="score-points">
+								<input type="number" />
+								-
+								<input type="number" />
+							</div>
+						</li>
+						<li class="mine">
+							<b>3.</b>
+							<span class="name">Yo</span>
+							<div class="score-points">
+								<input type="number" />
+								-
+								<input type="number" />
+							</div>
+						</li>
+						<li>
+							<b>4.</b>
+							<span class="name">Julian Castillo</span>
+							<div class="score-points">
+								<input type="number" />
+								-
+								<input type="number" />
+							</div>
+						</li>
+						<li>
+							<b>5.</b>
+							<span class="name">Beto Castillo</span>
+							<div class="score-points">
+								<input type="number" />
+								-
+								<input type="number" />
+							</div>
+						</li>
+						<li>
+							<b>6.</b>
+							<span class="name">Nicolas Castillo</span>
+							<div class="score-points">
+								<input type="number" />
+								-
+								<input type="number" />
+							</div>
+						</li>
+						<li>
+							<b>7.</b>
+							<span class="name">Maria Paz</span>
+							<div class="score-points">
+								<input type="number" />
+								-
+								<input type="number" />
+							</div>
+						</li>
+						<li>
+							<b>8.</b>
+							<span class="name">Luis Cruz</span>
+							<div class="score-points">
+								<span>1 - 0</span>
+								<b>256</b>
+							</div>
+						</li>
+						<li>
+							<b>8.</b>
+							<span class="name">Luis Cruz</span>
+							<div class="score-points">
+								<span>1 - 0</span>
+								<b>256</b>
+							</div>
+						</li>
+						<li>
+							<b>8.</b>
+							<span class="name">Luis Cruz</span>
+							<div class="score-points">
+								<span>1 - 0</span>
+								<b>256</b>
+							</div>
+						</li>
+						<li>
+							<b>8.</b>
+							<span class="name">Luis Cruz</span>
+							<div class="score-points">
+								<span>1 - 0</span>
+								<b>256</b>
+							</div>
+						</li>
+						<li>
+							<b>8.</b>
+							<span class="name">Luis Cruz</span>
+							<div class="score-points">
+								<span>1 - 0</span>
+								<b>256</b>
+							</div>
+						</li>
+					</ol>
+					<form class="content-form add-friends" style="display: none;">
+						<h2 class="tit-crea">Integrantes</h2>
+						<div class="add-user">
+							<input type="text" placeholder="Correo 1">
+							<span class="error"></span>
+						</div>
+						<div class="add-user">
+							<input type="text" placeholder="Correo 2">
+							<span class="error"></span>
+						</div>
+						<div class="add-user">
+							<input type="text" placeholder="Correo 3">
+							<a href="">
+								<span class="icon-cross"></span>
+							</a>
+							<span class="error"></span>
+						</div>
+						<div class="add-user">
+							<input type="text" placeholder="Correo 3">
+							<a href="">
+								<span class="icon-cross"></span>
+							</a>
+							<span class="error"></span>
+						</div>
+						<div class="add-user">
+							<input type="text" placeholder="Correo 3">
+							<a href="">
+								<span class="icon-cross"></span>
+							</a>
+							<span class="error"></span>
+						</div>
+						<button class="btn-mas" type="button"><span class="icon-plus"></span></button>
+						<button type="button" class="btn btn-lg btn-more"><span class="icon-plus"></span> Agregar</button>
+						<div class="redes">
+							<p>Invitar desde:</p>
+							<a href=""><span class="icon-facebook"></span></a>
+							<a href=""><span class="icon-google"></span></a>
+							<a href=""><span class="icon-twitter"></span></a>
+						</div>
+						<div class="btn-content">
+							<a href="crearpolla2.html" class="btn btn-cancel btn-lg">Volver</a>
+							<a href="crearpolla4.html" class="btn btn-save btn-lg">Guardar</a>
+						</div>
+					</form>
+					<div class="btn-content">
+						<a href="" class="btn btn-cancel btn-lg">Cancelar</a>
+						<a href="" class="btn btn-save btn-lg">Guardar</a>
+					</div>
+				</div>
+			</article>
+		</section>
+	</div>
+	<footer>
+		Compartir en
+		<div class="redes">
+			<a href=""><span class="icon-facebook"></span></a>
+			<a href=""><span class="icon-google"></span></a>
+			<a href=""><span class="icon-twitter"></span></a>
+		</div>
+		<p>© 2018 Pollaya. All rights reserved.</p>
+	</footer>
+</body>
