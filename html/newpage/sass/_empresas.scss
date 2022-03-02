@@ -1,0 +1,324 @@
+/*LANDING EMPRESAS*/
+.ld-main-emp{
+    background: no-repeat;
+    background-position: center 80px;
+    position: relative;
+    padding-top: 0;
+    margin-top: -180px;
+
+    @include md{
+        background-position: center;
+        margin-top: -70px;
+    }
+    @include s{
+        padding: 30px 0 0;
+        margin-top: -120px;
+    }
+    
+    .img-desk-emp{
+        width: 600px;
+        margin: 0 auto 40px;
+
+        @include sm{
+            width: 450px;
+        }
+
+        @include s{
+            width: 80%;
+        }
+    }
+    .box-emp{
+        text-align: center;
+    }
+
+    h1{
+        color: $dark;
+        font-size: 40px;
+        margin: 0 0 20px;
+
+        @include sm{
+            font-size: 35px;
+        }
+        @include xs{
+            font-size: 30px;
+        }
+        @include i5{
+            font-size: 25px;
+        }
+    }
+    p{
+        font-size: 20px;
+        font-weight: 400;
+
+        @include sm{
+            font-size: 18px;
+        }
+        @include xs{
+            font-size: 16px;
+        }
+        @include i5{
+            font-size: 14px;
+        }
+    }
+    .bt-charact{
+        display: block;
+        margin: 10px 0 0;
+        padding: 13px 0;
+        font-size: 23px;
+        color: $principal;
+    }
+}
+
+.block-emp{
+    position: relative;
+    height: 800px;
+    padding: 0;
+
+    @include sm{
+        height: 600px;
+    }
+    @include s{
+        height: auto;
+        padding: 0 0 80px;
+    }
+
+    .bkg-img{
+        width: 50%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-position: right center !important;
+        background-size: auto 100% !important;
+        z-index: 0;
+
+        @include lg{
+           background-position: center !important; 
+        }
+
+        @include s{
+            width: 100%;
+            height: 250px;
+            position: relative;
+            background-size: 100% auto !important;
+        }
+
+        &:after{
+            background: rgb(255,255,255);
+            background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%);
+            content: '';
+            top: 0;
+            left: 0;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+
+            @include s{
+                background: linear-gradient(180deg, rgba(255,255,255,0) 35%, rgba(255,255,255,1) 100%); 
+            }
+        }
+    }
+    .box-txt{
+        max-width: 570px;
+        margin: 0 0 0 50%;
+        padding: 0 0 0 20px;
+        display: grid;
+        grid-template-columns: 1fr;
+        align-items: center;
+        height: 100%;
+        position: relative;
+        z-index: 1;
+
+        @include xl{
+            max-width: 470px;
+        }
+
+        @include lg{
+            max-width: 375px;
+        }
+        @include sm{
+            width: 90%;
+            max-width: 100%;
+            margin: 0 auto;
+            padding: 0;
+        }
+        @include s{
+            display: block;
+        }
+        
+        .tit-planes{
+            text-align: left;
+
+            @include media(680px){
+                text-align: center;
+            }
+        }
+
+        h4{
+            font-size: 18px;
+            color: $dark;
+            font-weight: 700;
+        }
+        p{
+            color: $gray3;
+        }
+        .text{
+            font-size: 20px;
+
+            @include s{
+                font-size: 16px;
+            }
+        }
+    }
+}
+.block-red{
+    background: $principal;
+    color: $white;
+
+    .bkg-img:after{
+        background: rgb(255,29,69);
+        background: linear-gradient(90deg, rgba(255,29,69,0) 0%, rgba(255,29,69,1) 100%);
+
+        @include s{
+            background: linear-gradient(180deg, rgba(255,29,69,0) 35%, rgba(255,29,69,1) 100%); 
+        }
+    }
+
+    .tit-planes{
+        color: $white;
+    }
+    p.text{
+        color: $white;
+    }
+    .btn{
+        background: $white;
+        color: $principal;
+    }
+}
+.block-black{
+    background: $dark;
+    color: $white;
+
+    .bkg-img:after{
+        background: rgb(42,41,46);
+        background: linear-gradient(90deg, rgba(42,41,46,0) 0%, rgba(42,41,46,1) 100%);
+
+        @include s{
+            background: linear-gradient(180deg, rgba(42,41,46,0) 35%, rgba(42,41,46,1) 100%); 
+        }
+    }
+
+    .tit-planes{
+        color: $white;
+    }
+    p.text{
+        color: $white;
+    }
+}
+.block-right{
+
+    .bkg-img{
+        left: auto;
+        right: 0;
+
+        &:after{
+            background: rgb(255,255,255);
+            background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
+
+            @include s{
+                background: linear-gradient(180deg, rgba(255,255,255,0) 35%, rgba(255,255,255,1) 100%); 
+            }
+        }
+    }
+    .box-txt{
+        margin: 0 auto;
+        max-width: 1170px;
+
+        @include tablet{
+            padding: 0 20px 0 0;   
+        }
+
+        .tit-planes, h4, p{
+            max-width: 570px;
+        }
+    }
+}
+.box-personalization{
+    padding-bottom: 0;
+    color: $gray3;
+
+    .txt-person{
+        width: calc(100% - 350px);
+        float: left;
+
+        @include media(680px){
+            float: none;
+            width: 100%;
+        }
+
+        h3{
+            font-weight: 800;
+            font-size: 40px;
+            line-height: 100%;
+
+            @include media(680px){
+                text-align: center;
+                font-size: 30px;
+            }
+        }
+
+        p{
+            font-size: 20px;
+
+            @include media(680px){
+                text-align: center;
+                font-size: 16px;
+            }
+        }
+    }
+
+    .tit-clientes{
+        font-size: 30px;
+        font-weight: 700;
+        text-align: center;
+        color: $dark;
+        margin: 80px 0 0;
+        line-height: 100%;
+
+        @include s{
+            margin: 30px 0 0;
+        }
+    }
+
+    ul{
+        padding: 0;
+        list-style: none;
+        margin: 0;
+        text-align: left;
+        width: 300px;
+        float: right;
+
+        @include media(680px){
+            float: none;
+            width: 100%;
+            margin: 20px 0 0;
+        }
+
+        li{
+            color: $gray3;
+            padding: 5px 0;
+
+            i{
+                font-size: 16px;
+                display: inline-block;
+                margin: 0 5px 0 0;
+                color: #4CC508;
+            }
+        }
+    }
+}
+.contentpollaya{
+    max-width: 1140px;
+    margin: 0 auto;
+}
+/*LANDING EMPRESAS*/

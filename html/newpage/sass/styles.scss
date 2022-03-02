@@ -1,0 +1,26 @@
+/*COLORS*/
+$black: #000;
+$dark: #2A292E;
+$gray: #F3F5FA;
+$gray2: #E2E4E7;
+$gray3: #656968;
+$gray4: #9B9B9B;
+$gray5: #B4BAC0;
+$complementary: #4CC508;
+$principal: #FF1D45;
+$secundary: #B70F28;
+$bor-gray: 1px solid #E2E4E7;
+$white: #FFF;
+$text-color: #676767;
+
+br{
+    clear: both;
+}
+body{
+    font-family: 'Montserrat', sans-serif;
+}
+@import 'mixins';
+@import 'general';
+@import 'empresas';
+@import 'price';
+@import 'torneos';

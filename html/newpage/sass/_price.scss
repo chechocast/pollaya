@@ -1,0 +1,75 @@
+.sel-tab-price{
+    display: flex;
+    margin: 0 0 10px;
+    align-items: center;
+
+    .flag {
+        height: 30px;
+    }
+    .name-flag {
+        font-weight: 700;
+        color: $principal;
+        font-size: 18px;
+        margin: 0 10px;
+
+        @include tablet{
+            font-size: 25px;
+        }
+    }
+}
+.tab-coin{
+    display: flex;
+    align-items: center;
+    align-content: center;
+
+    .flag-tab {
+        height: 20px;
+    }
+    label{
+        padding: 0 6px;
+        width: calc(100% - 50px);
+        display: block;
+
+        @include tablet{
+            width: 100%;
+            display: inline;
+
+            span{
+                display: none;
+            }
+        }
+    }
+    i{
+        color: $principal;
+
+       @include tablet{
+           display: none;
+       } 
+    }
+}
+.flag-tab {
+    height: 20px;
+}
+.tabsprices{
+    .elementor-tabs-wrapper{
+
+        @include tablet{
+            background: $gray;
+        }
+    }
+    .elementor-tab-mobile-title{
+        background: $gray;
+        margin: 8px 0;
+        @include border-radius(6px);
+    }
+    .elementor-tab-desktop-title{
+        background: $gray;
+    }
+    .elementor-tab-title.elementor-active{
+        
+        @include tablet{
+            border-top: 3px solid $principal !important;
+            background: $white;
+        }
+    }
+}

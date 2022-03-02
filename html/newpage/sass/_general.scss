@@ -1,0 +1,156 @@
+.tit-planes{
+    color: $principal;
+    text-align: center;
+    font-weight: 800;
+    font-size: 28px;
+    text-transform: uppercase;
+    line-height: 100%;
+
+    @include tablet{
+        font-size: 32px;
+    }
+    @include small{
+        font-size: 50px;
+    }
+}
+.btn{
+    font-size: 20px;
+    background: $principal;
+    color: $white;
+    padding: 13px 35px;
+    border: none;
+    @include border-radius(24px);
+    font-weight: 700;
+
+    &:hover{
+        color: $white;
+    }
+
+    @include media(680px){
+        margin: 0 auto;
+        display: block;
+        max-width: 200px;
+        padding: 13px 0;
+        text-align: center;
+    }
+}
+.box-btns{
+    display: flex;
+    align-items: center;
+    align-content: center;
+    column-gap: 16px;
+
+    .btn-store{
+        padding: 15px 20px;
+        font-size: 16px;
+        background: #FFF;
+        color: #2A292E;
+        font-weight: 500;
+        border-radius: 25px;
+        transition: all 0.4s ease;
+
+        &:hover{
+            background: #D0E1F3;
+        }
+    }
+}
+
+/*TABLES*/
+.table{
+    width: 100%;
+    border-spacing: 0;
+    border: 0;
+    border-collapse: inherit;
+
+    thead{
+
+        th{
+            border-top: 0 !important;
+            padding: 0.75rem;
+            border-left: 0;
+            border-right: 0;
+            font-weight: bold;
+            color: $black;
+            text-align: left;
+            border-bottom: 2px solid #dee2e6;
+        }
+    }
+    tbody{
+
+        tr{
+            &:nth-child(2n){
+                background: $gray;
+            }
+        }
+        td{
+            border-top: 1px solid #dee2e6;
+            border-bottom: 0;
+            border-left: 0;
+            border-right: 0;
+        }
+    }
+
+    tr{
+        &:hover{
+            background: $gray;
+        }
+    }
+
+    &>tbody>tr>td{
+        padding: 8px;
+        vertical-align: middle;
+
+        @include m-s{
+            padding: 20px 8px;
+        }
+    }
+    &>tbody>tr:nth-child(odd)>td, &>tbody>tr:nth-child(odd)>th{
+        background: $white;
+    }
+    & tbody tr:hover>td, & tbody tr:hover>th{
+        background: $gray;
+    }
+
+}
+
+/*ELEMENTOR ISSUES*/
+.logros{
+    margin: 0 auto;
+    max-width: 800px;
+}
+.logros figure img{
+    padding: 20px;
+    border-radius: 50%;
+    box-shadow: 0px 8px 30px 0px rgb(177 206 239 / 35%);
+}
+.aleja .elementor-widget-container .swiper-container{
+    margin: 0 !important;
+}
+@include desk{
+    .elementor-nav-menu li:last-child a{
+        border: 2px solid #FF1D45;
+        border-radius: 20px;
+        color: #FF1D45 !important;
+        padding: 0 16px !important;
+        margin:10px 0;
+    }
+    .elementor-nav-menu li:last-child a:hover{
+        background: #FF1D45;
+        color: #FFF !important;
+    }
+    .elementor-nav-menu li:last-child a::after{
+        height:0px !important;
+    }
+}
+@include small{
+    .tocompanies{
+        background-color: #FFFFFF;
+        background-image: url(/wp-content/uploads/2022/01/img-deskemp.png);
+        background-position: 50vw 75%;
+        background-repeat: no-repeat;
+        background-size: 800px auto;
+    }
+    .aleja .elementor-widget-container .swiper-container{
+        margin: 0 -50px;
+    }
+}

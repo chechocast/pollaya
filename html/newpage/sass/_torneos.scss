@@ -1,0 +1,154 @@
+/*LANDING TORNEOS*/
+.titletournament{
+
+    @include extra{
+        margin-top: 80px;
+    }
+}
+.list-func{
+    color: $principal;
+    padding: 0;
+    list-style: none;
+    margin: 10px 0 0;
+    text-align: left;
+
+    li {
+        font-size: 14px;
+        padding: 5px 0;
+
+        i {
+            font-size: 16px;
+            display: inline-block;
+            margin: 0 5px 0 0;
+        }
+    }
+}
+/*DESTACADO HEADER*/
+.header-banner{
+    background: $principal;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    box-shadow: none;
+    height: auto;
+
+    .mask-banner{
+        bottom: -1px;
+        left: 0;
+        width: 100%;
+        position: absolute;
+        z-index: 0;
+
+        img{
+            display: block;
+            width: 100%;
+        }
+    }
+    .intro-text{
+        z-index: 1;
+        position: relative;
+        max-width: 650px;
+
+        @include xl{
+            width: 590px;
+            max-width: 100%;
+        }
+        @include lg{
+            width: 520px;
+        }
+        @include md{
+            width: 470px;
+        }
+        @include s{
+            width: 100%;
+        }
+
+        h1{
+            font-size: 40px;
+            line-height: 50px;
+            text-align: left;
+
+            @include xl{
+                font-size: 35px;
+                line-height: 38px;
+            }
+            @include md{
+                font-size: 30px;
+                line-height: 35px;
+            }
+            @include s{
+                text-align: center;
+            }
+        }
+
+        p{
+            text-align: center;
+        }
+
+        a{
+            font-size: 20px;
+            line-height: normal;
+            font-weight: 700;
+            background: $principal;
+            border: none;
+            @include border-radius(8px);
+            padding: 13px 35px;
+            text-transform: none;
+            display: block;
+            max-width: 200px;
+
+            @include s{
+                display: inline-block;
+                max-width: 100%;
+            }
+        }
+    }
+}
+.circle-banner{
+    top: 30px;
+    right: -5%;
+    position: absolute;
+    z-index: 1;
+    width: 800px;
+
+    br{
+        display: none;
+    }
+
+    @include media(1600px){
+        right: -10%;
+    }
+    @include media(1400px){
+        right: -13%;
+        width: 700px;
+    }
+    @include xl{
+        right: -10%;
+        width: 500px;
+    }
+    @include lg{
+        width: 400px;
+        top: 120px;
+    }
+    @include md{
+        width: 360px;
+        top: 150px;
+    }
+    @include media(680px){
+        display: none;
+    }
+
+    .mask{
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100%;
+    }
+    .img-in{
+        margin: 7% 13% 0 6%;
+        width: 70%;
+        border-radius: 50%;
+    }
+}
+/*FIN DESTACADO HEADER*/
